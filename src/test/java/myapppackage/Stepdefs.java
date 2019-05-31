@@ -1,6 +1,7 @@
 package myapppackage;
 
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -11,19 +12,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.Driver;
-
-import static org.junit.Assert.*;
 
 public class Stepdefs {
 
     private WebDriver driver;
 
-    @Given("I have entered a valid Username")
-    public void i_have_entered_a_valid_Username() {
+    @Before
+    public void StartUp(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://the-internet.herokuapp.com/login");
+    }
+
+    @Given("I have entered a valid Username")
+    public void i_have_entered_a_valid_Username() {
         driver.findElement(By.id("username")).sendKeys("tomsmith");
     }
 
@@ -56,9 +58,6 @@ public class Stepdefs {
 
     @Given("I have entered a valid username of {string}")
     public void i_have_entered_a_valid_username_of(String username) {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("http://the-internet.herokuapp.com/login");
         driver.findElement(By.id("username")).sendKeys(username);
     }
 
