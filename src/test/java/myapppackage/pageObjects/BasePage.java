@@ -23,4 +23,9 @@ public class BasePage {
         Find(locator).click();
     }
 
+    protected void ClearAndTypeIntoField(By locator, String inputText){
+        Find(locator).clear();
+        Find(locator).sendKeys(inputText);
+    }
+
 }

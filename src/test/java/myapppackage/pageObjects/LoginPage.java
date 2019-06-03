@@ -17,11 +17,11 @@ public class LoginPage extends BasePage {
     }
 
     public void EnterUsername(String username){
-        Find(usernameField).sendKeys(username);
+        ClearAndTypeIntoField(usernameField,username);
     }
 
     public void EnterPassword(String password){
-        Find(passwordField).sendKeys(password);
+        ClearAndTypeIntoField(passwordField, password);
     }
 
     public void ClickLoginButton(){
