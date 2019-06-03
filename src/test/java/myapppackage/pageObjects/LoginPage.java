@@ -3,7 +3,7 @@ package myapppackage.pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     private WebDriver driver;
 
@@ -12,21 +12,25 @@ public class LoginPage {
     private static By loginButton = By.className("radius");
 
     public LoginPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
     }
 
 
 
     public void EnterUsername(String username){
-        driver.findElement(usernameField).sendKeys(username);
+//        driver.findElement(usernameField).sendKeys(username);
+        Find(usernameField).sendKeys(username);
     }
 
     public void EnterPassword(String password){
-        driver.findElement(passwordField).sendKeys(password);
+        Find(passwordField).sendKeys(password);
+//            driver.findElement(passwordField).sendKeys(password);
     }
 
     public void ClickLoginButton(){
-        driver.findElement(loginButton).click();
+        Click(loginButton);
+//        driver.findElement(loginButton).click();
     }
 
     public String GetCurrentUrl(){
