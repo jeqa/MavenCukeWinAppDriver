@@ -16,21 +16,16 @@ public class LoginPage extends BasePage {
         this.driver = driver;
     }
 
-
-
     public void EnterUsername(String username){
-//        driver.findElement(usernameField).sendKeys(username);
         Find(usernameField).sendKeys(username);
     }
 
     public void EnterPassword(String password){
         Find(passwordField).sendKeys(password);
-//            driver.findElement(passwordField).sendKeys(password);
     }
 
     public void ClickLoginButton(){
         Click(loginButton);
-//        driver.findElement(loginButton).click();
     }
 
     public String GetCurrentUrl(){
