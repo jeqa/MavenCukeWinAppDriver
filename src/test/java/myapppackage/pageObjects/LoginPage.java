@@ -11,7 +11,7 @@ public class LoginPage {
     private static By passwordField = By.id("password");
     private static By loginButton = By.className("radius");
 
-    public  LoginPage(WebDriver driver){
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
