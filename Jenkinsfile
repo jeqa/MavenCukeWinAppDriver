@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        bat 'mvn test'
+        warnError(message: 'Tests have failed') {
+          bat 'mvn test'
+        }
+
       }
     }
     stage('Report') {
