@@ -6,5 +6,10 @@ pipeline {
         bat 'mvn test'
       }
     }
+    stage('Report') {
+      steps {
+        cucumber '**/*.json'
+      }
+    }
   }
 }
