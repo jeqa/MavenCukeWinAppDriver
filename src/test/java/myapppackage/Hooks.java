@@ -12,11 +12,26 @@ public class Hooks {
 
     @Before
     public void BeforeTestRun(){
-        webDriverController.setupController();
+        String browserName = getParameter("browser");
+        webDriverController.setupController(browserName);
     }
 
     @After
     public void AfterTestRun(){
         webDriverController.teardownController();
+    }
+
+    private String getParameter(String name) {
+        String value = System.getProperty(name);
+        if (value == null)
+            //throw new RuntimeException(name + " is not a parameter!");
+            value = "chrome";
+
+
+        if (value.isEmpty())
+            throw new RuntimeException(name + " is empty!");
+
+
+        return value;
     }
 }
