@@ -4,7 +4,7 @@ pipeline {
     stage('Test') {
       steps {
         warnError(message: 'Tests have failed') {
-          bat 'mvn test'
+          bat 'mvn test -Dbrowser=firefox'
         }
 
       }
