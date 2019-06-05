@@ -13,17 +13,22 @@ import myapppackage.pageObjects.LoginPage;
 
 public class Stepdefs {
 
-    private WebDriver driver;
+    //private WebDriver driver;
+    WebDriverController webDriverController;
+    LoginPage loginPage;
 
-    private LoginPage loginPage;
-
-    @Before
-    public void StartUp(){
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("http://the-internet.herokuapp.com/login");
-        loginPage = new LoginPage(driver);
+    public Stepdefs(WebDriverController webDriverController){
+        this.webDriverController = webDriverController;
+        loginPage = new LoginPage(this.webDriverController.getDriver());
     }
+
+//    @Before
+//    public void StartUp(){
+//        System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
+//        driver = new ChromeDriver();
+//        driver.get("http://the-internet.herokuapp.com/login");
+//        loginPage = new LoginPage(driver);
+//    }
 
     @Given("I have entered a valid Username")
     public void i_have_entered_a_valid_Username() {
@@ -67,9 +72,9 @@ public class Stepdefs {
         loginPage.EnterPassword(password);
     }
 
-    @After
-    public void TearDown(){
-        driver.quit();
-    }
+//    @After
+//    public void TearDown(){
+//        driver.quit();
+//    }
 
 }

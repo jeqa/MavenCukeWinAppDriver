@@ -2,25 +2,25 @@ package myapppackage;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import myapppackage.pageObjects.BasePage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hooks {
-
+    WebDriverController webDriverController;
     WebDriver driver;
 
-    public Hooks(){
-
+    public Hooks(WebDriverController webDriverController){
+        this.webDriverController = webDriverController;
     }
 
     @Before
     public void BeforeTestRun(){
-
+        webDriverController.setupController();
+        driver = webDriverController.getDriver();
+        driver.get("http://the-internet.herokuapp.com/login");
     }
 
     @After
     public void AfterTestRun(){
-
+        webDriverController.teardownController();
     }
 }
