@@ -1,13 +1,9 @@
 package myapppackage;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import myapppackage.pageObjects.LoginPage;
 
 
@@ -19,16 +15,9 @@ public class Stepdefs {
 
     public Stepdefs(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
-        loginPage = new LoginPage(this.webDriverController.getDriver());
+        loginPage = new LoginPage(this.webDriverController);
     }
 
-//    @Before
-//    public void StartUp(){
-//        System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
-//        driver = new ChromeDriver();
-//        driver.get("http://the-internet.herokuapp.com/login");
-//        loginPage = new LoginPage(driver);
-//    }
 
     @Given("I am on the Login Page")
     public void i_am_on_the_Login_Page() {

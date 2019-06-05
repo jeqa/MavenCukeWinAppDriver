@@ -2,6 +2,7 @@ package myapppackage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverController {
     private WebDriver driver;
@@ -15,8 +16,17 @@ public class WebDriverController {
     }
 
     public void setupController(){
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
-        this.driver = new ChromeDriver();
+
+        switch ("firefox"){
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/myapppackage/browserDrivers/chromedriver.exe");
+                this.driver = new ChromeDriver();
+                break;
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver", "src/test/resources/myapppackage/browserDrivers/geckodriver.exe");
+                this.driver = new FirefoxDriver();
+                break;
+        }
     }
 
     public void teardownController(){

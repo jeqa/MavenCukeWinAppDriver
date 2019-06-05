@@ -1,5 +1,6 @@
 package myapppackage.pageObjects;
 
+import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,10 +8,14 @@ import org.openqa.selenium.WebElement;
 public class BasePage {
 
     WebDriver driver;
+    WebDriverController webDriverController;
 
-    public BasePage(WebDriver driver){
-        this.driver = driver;
+
+    public BasePage(WebDriverController webDriverController){
+        this.webDriverController = webDriverController;
+        driver = webDriverController.getDriver();
     }
+
 
     public void Visit(String url){
         driver.get(url);
