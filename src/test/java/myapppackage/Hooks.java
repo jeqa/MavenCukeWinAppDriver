@@ -15,8 +15,8 @@ public class Hooks {
     @Before
     public void BeforeTestRun(){
         webDriverController.setupController();
-        driver = webDriverController.getDriver();
-        driver.get("http://the-internet.herokuapp.com/login");
+//        driver = webDriverController.getDriver();
+//        driver.get("http://the-internet.herokuapp.com/login");
     }
 
     @After

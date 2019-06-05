@@ -30,6 +30,11 @@ public class Stepdefs {
 //        loginPage = new LoginPage(driver);
 //    }
 
+    @Given("I am on the Login Page")
+    public void i_am_on_the_Login_Page() {
+        loginPage.NavigateToLoginPage();
+    }
+
     @Given("I have entered a valid Username")
     public void i_have_entered_a_valid_Username() {
         loginPage.EnterUsername("tomsmith");

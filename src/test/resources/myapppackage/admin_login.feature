@@ -3,6 +3,8 @@ Feature: AdminLogin
   As a somebody
   I want to do something
 
+  Background:
+    Given I am on the Login Page
 
 
   Scenario: Admin Login

@@ -16,6 +16,10 @@ public class LoginPage extends BasePage {
         this.driver = driver;
     }
 
+    public void NavigateToLoginPage(){
+        driver.get("http://the-internet.herokuapp.com/login");
+    }
+
     public void EnterUsername(String username){
         ClearAndTypeIntoField(usernameField,username);
     }
