@@ -7,10 +7,6 @@ pipeline {
           bat 'mvn test -Dbrowser=firefox'
         }
 
-        warnError(message: 'Chrome Tests have Failed') {
-          bat 'mvn test -Dbrowser=chrome'
-        }
-
       }
     }
     stage('Report') {
