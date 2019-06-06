@@ -1,7 +1,10 @@
 package myapppackage;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
     WebDriverController webDriverController;
@@ -18,7 +21,11 @@ public class Hooks {
     }
 
     @After
-    public void AfterTestRun(){
+    public void AfterTestRun(Scenario scenario){
+        if (scenario.isFailed()){
+            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.embed(screenshot, "image/png");
+        }
         webDriverController.teardownController();
     }
 
