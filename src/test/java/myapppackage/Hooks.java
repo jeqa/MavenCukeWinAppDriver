@@ -5,6 +5,7 @@ import cucumber.api.java.Before;
 
 public class Hooks {
     WebDriverController webDriverController;
+    public String browserName;
 
     public Hooks(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
@@ -12,7 +13,7 @@ public class Hooks {
 
     @Before
     public void BeforeTestRun(){
-        String browserName = getParameter("browser");
+        browserName = getParameter("browser");
         webDriverController.setupController(browserName);
     }
 
