@@ -9,6 +9,8 @@ import org.openqa.selenium.TakesScreenshot;
 public class Hooks {
     WebDriverController webDriverController;
     public String browserName;
+    public String browserVersion;
+    public String platform;
 
     public Hooks(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
