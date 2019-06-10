@@ -69,6 +69,8 @@
                 <version>2.18</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
+                    <parallel>both</parallel>
+                    <threadCount>4</threadCount>
                 </configuration>
             </plugin>
             <plugin>
