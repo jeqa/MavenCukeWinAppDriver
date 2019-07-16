@@ -13,10 +13,7 @@ public class LoginPage extends BasePage {
     private static By passwordField = By.id("password");
     private static By loginButton = By.className("radius");
 
-//    public LoginPage(WebDriver driver) {
-//        super(driver);
-//        this.driver = driver;
-//    }
+
     public LoginPage(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;

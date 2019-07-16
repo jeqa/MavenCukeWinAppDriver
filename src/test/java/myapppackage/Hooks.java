@@ -18,18 +18,21 @@ public class Hooks {
     }
 
     @Before
+//    public void BeforeTestRun(){
+//        browserName = getParameter("browser");
+//        webDriverController.setupController(browserName);
+//    }
     public void BeforeTestRun(){
-        browserName = getParameter("browser");
-        webDriverController.setupController(browserName);
+        webDriverController.setupController();
     }
 
     @After
     public void AfterTestRun(Scenario scenario){
-        if (scenario.isFailed()){
-            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
-            scenario.write("Scenario Failed on Browser Type: " + value.toUpperCase());
-        }
+//        if (scenario.isFailed()){
+//            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
+//            scenario.embed(screenshot, "image/png");
+//            scenario.write("Scenario Failed on Browser Type: " + value.toUpperCase());
+//        }
         webDriverController.teardownController();
     }
 
@@ -39,10 +42,8 @@ public class Hooks {
             //throw new RuntimeException(name + " is not a parameter!");
             value = "chrome";
 
-
         if (value.isEmpty())
             throw new RuntimeException(name + " is empty!");
-
 
         return value;
     }

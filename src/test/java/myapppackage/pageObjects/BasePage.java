@@ -1,5 +1,6 @@
 package myapppackage.pageObjects;
 
+import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class BasePage {
 
-    WebDriver driver;
+    WindowsDriver driver;
     WebDriverController webDriverController;
 
 
@@ -33,5 +34,19 @@ public class BasePage {
         Find(locator).clear();
         Find(locator).sendKeys(inputText);
     }
+
+    public void enterTextViaSendKeys(By locator, String inputText){
+        Find(locator).sendKeys(inputText);
+    }
+
+    public void closeApp(){
+        driver.closeApp();
+    }
+
+    public void launchApp(){
+        driver.launchApp();
+    }
+
+    
 
 }

@@ -1,3 +1,4 @@
+@ignore
 Feature: AdminLogin
   In order to blah
   As a somebody
