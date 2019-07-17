@@ -24,13 +24,12 @@ public class WebDriverController {
         this.driver = driver;
     }
 
-    public void setupController(){
+    public void setupController(String appIdentifier, String appArgument){
         try{
             DesiredCapabilities capabilities = new DesiredCapabilities();
-//            capabilities.setCapability("app", "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe");
-//            capabilities.setCapability("appArguments", "/q");
-            capabilities.setCapability("app", "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe");
-            capabilities.setCapability("appArguments", "/e");
+            capabilities.setCapability("app", appIdentifier);
+            if (appArgument.length() > 0){
+                capabilities.setCapability("appArguments", appArgument);}
             this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
             this.driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -40,6 +39,8 @@ public class WebDriverController {
         }
 
     }
+
+
 
 //    public void setupController(String browserName){
 //

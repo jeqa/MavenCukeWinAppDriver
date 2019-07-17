@@ -23,7 +23,20 @@ public class Hooks {
 //        webDriverController.setupController(browserName);
 //    }
     public void BeforeTestRun(Scenario scenario){
-        webDriverController.setupController();
+        String appId = "";
+        String appArg = "";
+
+        if (scenario.getName().contains("Word")){
+            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe";
+            appArg = "/q";
+        }
+        else if (scenario.getName().contains("Excel")){
+            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
+            appArg = "/e";
+        }
+
+
+        webDriverController.setupController(appId, appArg);
     }
 
     @After
