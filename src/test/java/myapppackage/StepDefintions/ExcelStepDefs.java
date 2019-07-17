@@ -28,58 +28,57 @@ public class ExcelStepDefs {
         saveAsDialog = new SaveAsDialog(this.webDriverController);
     }
 
-    @Given("I have opened Word")
-    public void i_have_opened_Word() {
-        wordApp.selectBlankDocument();
+    @Given("I have opened a blank workbook")
+    public void i_have_opened_a_blank_workbook() {
+        excelApp.selectBlankDocument();
     }
 
-    @When("I enter text")
-    public void i_enter_text() {
-        wordApp.enterTextInWordDocument();
+    @When("I enter text into cell BFour")
+    public void i_enter_text_into_cell_BFour(){
+        excelApp.enterTextInCell("B4");
     }
 
-    @When("save the document")
-    public void save_the_document() {
+    @Then("the entered text is retained in cell BFour")
+    public void the_entered_text_is_retained_in_cell_BFour() {
+        excelApp.reopenExcel();
+        excelApp.openExistingWorkbook(fileName + ".xlsx");
+        excelApp.getTextFromCell("B4");
+        Assert.assertTrue(excelApp.getTextFromCell("B4").equalsIgnoreCase(excelApp.getB4InitialText()));
+    }
+
+    @Given("I have created and saved a Excel Document")
+    public void i_have_created_and_saved_a_Excel_Document() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @When("I update by entering text into cell D{int}")
+    public void i_update_by_entering_text_into_cell_D(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @Then("the updated text is retained in Cell D{int}")
+    public void the_updated_text_is_retained_in_Cell_D(Integer int1) {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
+    @When("save the workbook")
+    public void save_the_workbook() {
         String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        fileName = "wordfile_" + timestamp;
+        fileName = "excelfile_" + timestamp;
         saveAsDialog.saveFileWithCtrlPlusS(fileName);
-        excelApp.closeWord();
+        excelApp.closeExcel();
     }
 
-    @Then("the entered text is retained")
-    public void the_entered_text_is_retained() {
-        excelApp.reopenWord();
-        wordApp.openExistingDocument(fileName + ".docx");
-        Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(wordApp.getInitialText()));
-    }
-
-    @Given("I have created and saved a Word Document")
-    public void i_have_created_and_saved_a_Word_Document() {
-        i_have_opened_Word();
-        i_enter_text();
-        save_the_document();
-    }
-
-    @When("I update the text")
-    public void i_update_the_text() {
-        excelApp.reopenWord();
-        wordApp.openExistingDocument(fileName + ".docx");
-        wordApp.updateTextInWordDocument();
-    }
-
-    @When("save the document using existing filename")
-    public void save_the_document_using_existing_filename() {
+    @When("save the workbook using existing filename")
+    public void save_the_workbook_using_existing_filename() {
         saveAsDialog.saveFileWithCtrlPlusS();
-        excelApp.closeWord();
+        excelApp.closeExcel();
     }
 
-    @Then("the updated text is retained")
-    public void the_updated_text_is_retained() {
-        excelApp.reopenWord();
-        wordApp.openExistingDocument(fileName + ".docx");
-        String allText = wordApp.getInitialText() + " " + wordApp.getUpdateText();
-        Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(allText));
-    }
+
 
 
 

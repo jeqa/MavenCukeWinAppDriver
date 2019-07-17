@@ -36,21 +36,6 @@ public class WordApp extends BasePage {
         enterTextViaSendKeys(document, initialText);
     }
 
-//    public void saveWordFileToDocuments(String filename){
-//        Find(document).sendKeys(Keys.chord(Keys.CONTROL, "s"));
-//        saveAsDialog.selectBrowseThenDocuments();
-//        saveAsDialog.clearAndTypeFileNameTheSave(filename);
-////        Click(wordSaveAsBrowseLink);
-////        Click(wordSaveAsDocumentsLink);
-////        driver.findElementByAccessibilityId(wordSaveAsFileNameFieldAutomationId).clear();
-////        driver.findElementByAccessibilityId(wordSaveAsFileNameFieldAutomationId).sendKeys(filename);
-////        Click(wordSaveAsSaveButton);
-//    }
-//
-//    public void saveWordFileToDocuments(){
-//        Find(document).sendKeys(Keys.chord(Keys.CONTROL, "s"));
-//    }
-
     public void closeWord(){
         closeApp();
     }

@@ -10,16 +10,17 @@ public class ExcelApp extends BasePage {
     private WindowsDriver driver;
     WebDriverController webDriverController;
 
-    private String initialText = "This is the initial text.";
-    private String updateText = "This is an update!";
+    private String b4InitialText = "Initial Text in B4";
+    private String d9UpdateText = "Update Text in D9";
 
 //  Locators
-    private static final By blankDocumentLink = By.name("Blank document");
-    private static final By document = By.className("_WwG");
-    private static final By wordSaveAsBrowseLink = By.name("Browse");
-    private static final By wordSaveAsDocumentsLink = By.name("Documents");
-    private static final String wordSaveAsFileNameFieldAutomationId = "1001";
-    private static final By wordSaveAsSaveButton = By.name("Save");
+    private static final By fileMenuTab = By.name("File Tab");
+    private static final By newMenuOption = By.name("New");
+    private static final By openMenuOption = By.name("Open");
+    private static final By blankDocumentLink = By.name("Blank workbook");
+    private static final By cellB4 = By.name("B4");
+    private static final By cellD9 = By.name("D9");
+
 
 
     public ExcelApp(WebDriverController webDriverController){
@@ -29,57 +30,59 @@ public class ExcelApp extends BasePage {
     }
 
     public void selectBlankDocument(){
+        Click(fileMenuTab);
+        Click(newMenuOption);
         Click(blankDocumentLink);
     }
 
-    public void enterTextInWordDocument(){
-        enterTextViaSendKeys(document, initialText);
+    public void enterTextInCell(String cell){
+        Click(By.name(cell));
+        enterTextViaSendKeys(By.name(cell), b4InitialText);
     }
 
-//    public void saveWordFileToDocuments(String filename){
-//        Find(document).sendKeys(Keys.chord(Keys.CONTROL, "s"));
-//        saveAsDialog.selectBrowseThenDocuments();
-//        saveAsDialog.clearAndTypeFileNameTheSave(filename);
-////        Click(wordSaveAsBrowseLink);
-////        Click(wordSaveAsDocumentsLink);
-////        driver.findElementByAccessibilityId(wordSaveAsFileNameFieldAutomationId).clear();
-////        driver.findElementByAccessibilityId(wordSaveAsFileNameFieldAutomationId).sendKeys(filename);
-////        Click(wordSaveAsSaveButton);
-//    }
-//
-//    public void saveWordFileToDocuments(){
-//        Find(document).sendKeys(Keys.chord(Keys.CONTROL, "s"));
-//    }
-
-    public void closeWord(){
+    public void closeExcel(){
         closeApp();
     }
 
-    public void reopenWord(){
+    public void reopenExcel(){
         launchApp();
     }
 
-    public void openExistingDocument(String filename){
+    public void openExistingWorkbook(String filename){
+        Click(fileMenuTab);
+        Click(openMenuOption);
         Click(By.name(filename));
     }
 
-    public String getDocumentText(){
-        return Find(document).getText().replace("\r", "");
+    public String getTextFromCell(String cell){
+        return Find(By.name(cell)).getText();
     }
 
-    public String getInitialText(){
-        return initialText;
+    public String getB4InitialText(){
+        return b4InitialText;
     }
 
-    public String getUpdateText(){
-        return updateText;
+    public String getD9UpdateText(){
+        return d9UpdateText;
     }
 
-    public void updateTextInWordDocument(){
-        Click(document);
-        Find(document).sendKeys(Keys.SPACE);
-        enterTextViaSendKeys(document, updateText);
-    }
+//    public String getDocumentText(){
+//        return Find(document).getText().replace("\r", "");
+//    }
+//
+//    public String getInitialText(){
+//        return initialText;
+//    }
+//
+//    public String getUpdateText(){
+//        return updateText;
+//    }
+//
+//    public void updateTextInWordDocument(){
+//        Click(document);
+//        Find(document).sendKeys(Keys.SPACE);
+//        enterTextViaSendKeys(document, updateText);
+//    }
 
 
     }
