@@ -20,7 +20,7 @@ public class PowerpointStepDefs {
     PowerpointApp powerpointApp;
     SaveAsDialog saveAsDialog;
 
-    public String fileName;
+    private String fileName;
 
     public PowerpointStepDefs(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
@@ -30,32 +30,34 @@ public class PowerpointStepDefs {
 
     @Given("I have opened Powerpoint")
     public void i_have_opened_Powerpoint() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        powerpointApp.selectBlankDocument();
     }
 
     @When("I enter text into the Title box")
     public void i_enter_text_into_the_Title_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        powerpointApp.enterTitleText();
     }
 
     @When("I enter text into the subtitle box")
     public void i_enter_text_into_the_subtitle_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        powerpointApp.enterSubTitleText();
     }
 
     @When("save the Powerpoint file")
     public void save_the_Powerpoint_file() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+        fileName = "ppfile_" + timestamp;
+        saveAsDialog.saveFileWithCtrlPlusS(fileName);
+        powerpointApp.closeApp();
     }
 
     @Then("the entered slide text is retained")
     public void the_entered_slide_text_is_retained() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        powerpointApp.launchApp();
+        powerpointApp.openExistingPresentation(fileName + ".pptx");
+        powerpointApp.getTitleText();
+        Assert.assertTrue(powerpointApp.getTitleText().equalsIgnoreCase(powerpointApp.getExpectedTitleText()));
+        Assert.assertTrue(powerpointApp.getSubTitleText().equalsIgnoreCase(powerpointApp.getExpectedSubTitleText()));
     }
 
 }

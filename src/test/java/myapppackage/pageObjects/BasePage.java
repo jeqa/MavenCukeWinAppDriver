@@ -36,6 +36,7 @@ public class BasePage {
     }
 
     public void enterTextViaSendKeys(By locator, String inputText){
+        Click(locator);
         Find(locator).sendKeys(inputText);
     }
 

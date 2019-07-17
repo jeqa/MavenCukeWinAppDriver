@@ -9,16 +9,13 @@ public class PowerpointApp extends BasePage {
     private WindowsDriver driver;
     WebDriverController webDriverController;
 
-    private String b4InitialText = "Initial Text in B4";
-    private String d9UpdateText = "Update Text in D9";
+    private String titleText = "Title of Presentation";
+    private String subTitleText = "Subtitle of Presentation";
 
 //  Locators
-    private static final By fileMenuTab = By.name("File Tab");
-    private static final By newMenuOption = By.name("New");
-    private static final By openMenuOption = By.name("Open");
-    private static final By blankDocumentLink = By.name("Blank workbook");
-    private static final By cellB4 = By.name("B4");
-    private static final By cellD9 = By.name("D9");
+    private static final By blankDocumentLink = By.name("Blank Presentation");
+    private static final By titleTextBox = By.name("Title TextBox");
+    private static final By subTitleTextBox = By.name("Subtitle TextBox");
 
 
 
@@ -28,10 +25,38 @@ public class PowerpointApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-
-
-
+    public void selectBlankDocument(){
+        Click(blankDocumentLink);
     }
+
+
+    public void enterTitleText() {enterTextViaSendKeys(titleTextBox, titleText);
+    }
+
+    public void enterSubTitleText() {
+        enterTextViaSendKeys(subTitleTextBox, subTitleText);
+    }
+
+    public void openExistingPresentation(String filename) {
+        Click(By.name(filename));
+    }
+
+    public String getTitleText() {
+        return Find(titleTextBox).getText().replace("\r", "");
+    }
+
+    public String getSubTitleText() {
+        return Find(subTitleTextBox).getText().replace("\r", "");
+    }
+
+    public  String getExpectedTitleText(){
+        return titleText;
+    }
+
+    public  String getExpectedSubTitleText(){
+        return subTitleText;
+    }
+}
 
 
 

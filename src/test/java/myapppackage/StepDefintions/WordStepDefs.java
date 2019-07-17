@@ -19,7 +19,7 @@ public class WordStepDefs {
     WordApp wordApp;
     SaveAsDialog saveAsDialog;
 
-    public String fileName;
+    private String fileName;
 
     public WordStepDefs(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
