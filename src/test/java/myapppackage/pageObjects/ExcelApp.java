@@ -35,9 +35,9 @@ public class ExcelApp extends BasePage {
         Click(blankDocumentLink);
     }
 
-    public void enterTextInCell(String cell){
+    public void enterTextInCell(String cell, String text){
         Click(By.name(cell));
-        enterTextViaSendKeys(By.name(cell), b4InitialText);
+        enterTextViaSendKeys(By.name(cell), text);
     }
 
     public void closeExcel(){

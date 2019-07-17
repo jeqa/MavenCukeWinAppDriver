@@ -9,6 +9,6 @@ Feature: ExcelTest
 
   Scenario: Update and Save Excel Document
     Given I have created and saved a Excel Document
-    When I update by entering text into cell D9
+    When I update by entering text into cell DNine
     And save the workbook using existing filename
-    Then the updated text is retained in Cell D9
+    Then the updated text is retained in Cell DNine

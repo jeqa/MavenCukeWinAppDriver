@@ -22,7 +22,7 @@ public class Hooks {
 //        browserName = getParameter("browser");
 //        webDriverController.setupController(browserName);
 //    }
-    public void BeforeTestRun(){
+    public void BeforeTestRun(Scenario scenario){
         webDriverController.setupController();
     }
 
