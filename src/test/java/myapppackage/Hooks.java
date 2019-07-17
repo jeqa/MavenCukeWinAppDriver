@@ -34,6 +34,10 @@ public class Hooks {
             appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appArg = "/e";
         }
+        else if (scenario.getName().contains("Powerpoint")){
+            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
+            appArg = "/s";
+        }
 
 
         webDriverController.setupController(appId, appArg);
