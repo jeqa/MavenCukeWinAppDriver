@@ -16,9 +16,9 @@ import java.util.Date;
 public class PowerpointStepDefs {
 
     //private WebDriver driver;
-    WebDriverController webDriverController;
-    PowerpointApp powerpointApp;
-    SaveAsDialog saveAsDialog;
+    private WebDriverController webDriverController;
+    private PowerpointApp powerpointApp;
+    private SaveAsDialog saveAsDialog;
 
     private String fileName;
 
@@ -35,6 +35,7 @@ public class PowerpointStepDefs {
 
     @When("I enter text into the Title box")
     public void i_enter_text_into_the_Title_box() {
+        powerpointApp.clickSlide1();
         powerpointApp.enterTitleText();
     }
 
@@ -55,8 +56,34 @@ public class PowerpointStepDefs {
     public void the_entered_slide_text_is_retained() {
         powerpointApp.launchApp();
         powerpointApp.openExistingPresentation(fileName + ".pptx");
-        powerpointApp.getTitleText();
         Assert.assertTrue(powerpointApp.getTitleText().equalsIgnoreCase(powerpointApp.getExpectedTitleText()));
+        Assert.assertTrue(powerpointApp.getSubTitleText().equalsIgnoreCase(powerpointApp.getExpectedSubTitleText()));
+    }
+
+    @Given("I have created and saved a Powerpoint file")
+    public void i_have_created_and_saved_a_Powerpoint_file() {
+        i_have_opened_Powerpoint();
+        i_enter_text_into_the_Title_box();
+        save_the_Powerpoint_file();
+    }
+
+    @When("I update the Powerpoint file")
+    public void i_update_the_Powerpoint_file() {
+        powerpointApp.launchApp();
+        powerpointApp.openExistingPresentation(fileName + ".pptx");
+        i_enter_text_into_the_subtitle_box();
+    }
+
+    @When("save the Powerpoint file using existing filename")
+    public void save_the_Powerpoint_file_using_existing_filename() {
+        saveAsDialog.saveFileWithCtrlPlusS();
+        powerpointApp.closeApp();
+    }
+
+    @Then("the updated slide text is retained")
+    public void the_updated_slide_text_is_retained() {
+        powerpointApp.launchApp();
+        powerpointApp.openExistingPresentation(fileName + ".pptx");
         Assert.assertTrue(powerpointApp.getSubTitleText().equalsIgnoreCase(powerpointApp.getExpectedSubTitleText()));
     }
 

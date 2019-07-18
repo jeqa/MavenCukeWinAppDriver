@@ -16,6 +16,7 @@ public class PowerpointApp extends BasePage {
     private static final By blankDocumentLink = By.name("Blank Presentation");
     private static final By titleTextBox = By.name("Title TextBox");
     private static final By subTitleTextBox = By.name("Subtitle TextBox");
+    private static final By slide1 = By.name("Slide 1");
 
 
 
@@ -27,6 +28,10 @@ public class PowerpointApp extends BasePage {
 
     public void selectBlankDocument(){
         Click(blankDocumentLink);
+    }
+
+    public void clickSlide1() {
+        Click(slide1);
     }
 
 
