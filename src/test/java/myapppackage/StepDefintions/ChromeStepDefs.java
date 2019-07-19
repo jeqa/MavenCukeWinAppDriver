@@ -47,4 +47,9 @@ public class ChromeStepDefs {
     public void chrome_is_opened_as_expected() {
         Assert.assertTrue(chromeApp.isExpectedTabDisplayed());
     }
+
+    @Given("that Chrome has opened")
+    public void that_Chrome_has_opened() {
+        // Empty method for readability of scenario
+    }
 }
