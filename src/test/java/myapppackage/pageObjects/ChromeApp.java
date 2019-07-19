@@ -21,8 +21,11 @@ public class ChromeApp extends BasePage {
     private String targetUrl = "https://www.bbc.co.uk/news";
     private String homeUrl = "https://www.bbc.co.uk";
 
+
 //  Locators
     private static final By addressBar = By.name("Address and search bar");
+    private static final By homeTab = By.name("BBC - Home - Google Chrome");
+    private static final By targetTab = By.name("Home - BBC News - Google Chrome");
 
 
     public ChromeApp(WebDriverController webDriverController){
@@ -34,16 +37,19 @@ public class ChromeApp extends BasePage {
 
 
     public void navigateToTargetSite(){
-        ClearAndTypeIntoField(addressBar, targetUrl);
-        Find(addressBar).sendKeys(Keys.ENTER);
-    }
-
-    public boolean isExpectedTabDisplayed(){
-        return driver.findElementByName("BBC - Home - Google Chrome").isDisplayed();
+        navigateToSiteViaAddressBar(addressBar, targetUrl);
     }
 
     public String getCurrentUrl(){
-        return Find(addressBar).getText();
+        return getCurrentUrlFromAddressBar(addressBar);
+    }
+
+    public boolean isExpectedHomeTabDisplayed(){
+        return isElementDisplayed(homeTab);
+    }
+
+    public boolean isExpectedTargetTabDisplayed(){
+        return isElementDisplayed(targetTab);
     }
 
 

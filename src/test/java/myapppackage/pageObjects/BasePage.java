@@ -3,6 +3,7 @@ package myapppackage.pageObjects;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -48,6 +49,18 @@ public class BasePage {
         driver.launchApp();
     }
 
-    
+    public boolean isElementDisplayed(By locator){
+        return Find(locator).isDisplayed();
+    }
+
+//    Browsers
+
+    public String getCurrentUrlFromAddressBar(By locator){
+        return Find(locator).getText();
+    }
+    public void navigateToSiteViaAddressBar(By locator, String url){
+        ClearAndTypeIntoField(locator, url);
+        Find(locator).sendKeys(Keys.ENTER);
+    }
 
 }

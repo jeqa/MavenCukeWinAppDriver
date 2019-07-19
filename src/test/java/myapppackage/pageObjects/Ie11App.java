@@ -43,20 +43,19 @@ public class Ie11App extends BasePage {
     }
 
     public void navigateToTargetSite(){
-        ClearAndTypeIntoField(addressBar, targetUrl);
-        Find(addressBar).sendKeys(Keys.ENTER);
+        navigateToSiteViaAddressBar(addressBar, targetUrl);
     }
 
     public String getCurrentUrl(){
-        return Find(addressBar).getText();
+        return getCurrentUrlFromAddressBar(addressBar);
     }
 
     public boolean isExpectedHomeTabDisplayed(){
-        return Find(homeTab).isDisplayed();
+        return isElementDisplayed(homeTab);
     }
 
     public boolean isExpectedTargetTabDisplayed(){
-        return Find(targetTab).isDisplayed();
+        return isElementDisplayed(targetTab);
     }
 
 

@@ -28,8 +28,7 @@ public class ChromeStepDefs {
 
     @Then("the expected home page is displayed")
     public void the_expected_home_page_is_displayed() {
-        Assert.assertTrue("Actual Address is: " + chromeApp.getCurrentUrl(),
-                chromeApp.getCurrentUrl().equalsIgnoreCase(chromeApp.getHomeUrl()));
+        Assert.assertTrue(chromeApp.isExpectedHomeTabDisplayed());
     }
 
     @When("I attempt to navigate to another site")
@@ -39,13 +38,7 @@ public class ChromeStepDefs {
 
     @Then("the expected site is displayed")
     public void the_expected_site_is_displayed() {
-        Assert.assertTrue("Actual Address is: " + chromeApp.getCurrentUrl(),
-                chromeApp.getCurrentUrl().equalsIgnoreCase(chromeApp.getTargetUrl()));
-    }
-
-    @Then("Chrome is opened as expected")
-    public void chrome_is_opened_as_expected() {
-        Assert.assertTrue(chromeApp.isExpectedTabDisplayed());
+        Assert.assertTrue(chromeApp.isExpectedTargetTabDisplayed());
     }
 
     @Given("that Chrome has opened")
