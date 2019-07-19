@@ -1,8 +1,8 @@
-@Powerpoint
+@Chrome
 Feature: ChromeTest
 
-  Scenario: Chrome app check
-    Then Chrome is opened as expected
+#  Scenario: Chrome app check
+##    Then Chrome is opened as expected
 
   Scenario: Chrome home page
     Then the expected home page is displayed

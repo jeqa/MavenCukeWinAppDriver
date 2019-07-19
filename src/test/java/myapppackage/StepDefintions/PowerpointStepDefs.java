@@ -87,4 +87,16 @@ public class PowerpointStepDefs {
         Assert.assertTrue(powerpointApp.getSubTitleText().equalsIgnoreCase(powerpointApp.getExpectedSubTitleText()));
     }
 
+    @When("I add a slide to the Powerpoint file")
+    public void i_add_a_slide_to_the_Powerpoint_file() {
+        powerpointApp.focusOnMainWindow();
+        powerpointApp.addSlide();
+    }
+
+    @Then("the added slide is retained")
+    public void the_added_slide_is_retained() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new cucumber.api.PendingException();
+    }
+
 }

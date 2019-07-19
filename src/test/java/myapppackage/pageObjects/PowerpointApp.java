@@ -3,6 +3,7 @@ package myapppackage.pageObjects;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class PowerpointApp extends BasePage {
 
@@ -17,6 +18,7 @@ public class PowerpointApp extends BasePage {
     private static final By titleTextBox = By.name("Title TextBox");
     private static final By subTitleTextBox = By.name("Subtitle TextBox");
     private static final By slide1 = By.name("Slide 1");
+    private static final By mainWindow = By.name("Presentation1 - PowerPoint");
 
 
 
@@ -32,6 +34,14 @@ public class PowerpointApp extends BasePage {
 
     public void clickSlide1() {
         Click(slide1);
+    }
+
+    public void focusOnMainWindow(){
+        Click(mainWindow);
+    }
+
+    public void addSlide(){
+        driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "m"));
     }
 
 

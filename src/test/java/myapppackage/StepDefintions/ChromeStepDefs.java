@@ -28,8 +28,8 @@ public class ChromeStepDefs {
 
     @Then("the expected home page is displayed")
     public void the_expected_home_page_is_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        Assert.assertTrue("Actual Address is: " + chromeApp.getCurrentUrl(),
+                chromeApp.getCurrentUrl().equalsIgnoreCase(chromeApp.getHomeUrl()));
     }
 
     @When("I attempt to navigate to another site")
@@ -39,8 +39,8 @@ public class ChromeStepDefs {
 
     @Then("the expected site is displayed")
     public void the_expected_site_is_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        Assert.assertTrue("Actual Address is: " + chromeApp.getCurrentUrl(),
+                chromeApp.getCurrentUrl().equalsIgnoreCase(chromeApp.getTargetUrl()));
     }
 
     @Then("Chrome is opened as expected")
