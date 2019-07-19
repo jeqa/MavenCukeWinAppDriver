@@ -25,6 +25,8 @@ public class Ie11App extends BasePage {
     private static final By addressBar = By.name("Address and search using Bing");
     private static final By setUpDialogDontUseRadioButton = By.name("Don’t use recommended settings");
     private static final By setUpDialogOkButton = By.name("OK");
+    private static final By homeTab = By.name("BBC - Home");
+    private static final By targetTab = By.name("Home - BBC News");
 
 
     public Ie11App(WebDriverController webDriverController){
@@ -40,19 +42,21 @@ public class Ie11App extends BasePage {
         }
     }
 
-
-
     public void navigateToTargetSite(){
         ClearAndTypeIntoField(addressBar, targetUrl);
         Find(addressBar).sendKeys(Keys.ENTER);
     }
 
-    public boolean isExpectedTabDisplayed(){
-        return driver.findElementByName("BBC - Home - Google Chrome").isDisplayed();
-    }
-
     public String getCurrentUrl(){
         return Find(addressBar).getText();
+    }
+
+    public boolean isExpectedHomeTabDisplayed(){
+        return Find(homeTab).isDisplayed();
+    }
+
+    public boolean isExpectedTargetTabDisplayed(){
+        return Find(targetTab).isDisplayed();
     }
 
 
