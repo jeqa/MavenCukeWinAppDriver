@@ -27,12 +27,28 @@ public class Hooks {
         String appArg = "";
 
         if (scenario.getName().contains("Word")){
-            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe";
+//            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe";
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.exe";
             appArg = "/q";
         }
         else if (scenario.getName().contains("Excel")){
-            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
+//            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appArg = "/e";
+        }
+        else if (scenario.getName().contains("Powerpoint")){
+//            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
+            appArg = "/s";
+        }
+        else if (scenario.getName().contains("Chrome")){
+            appId = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+        }
+        else if (scenario.getName().contains("IE11")){
+            appId = "C:\\Program Files\\internet explorer\\iexplore.exe";
+        }
+        else if (scenario.getName().contains("Edge")){
+            appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe";
         }
 
 

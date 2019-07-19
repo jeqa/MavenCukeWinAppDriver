@@ -1,6 +1,7 @@
 package myapppackage;
 
 import net.bytebuddy.asm.Advice;
+import org.junit.Assert;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,8 +32,11 @@ public class WebDriverController {
             if (appArgument.length() > 0){
                 capabilities.setCapability("appArguments", appArgument);}
             this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
-            this.driver.manage().window().maximize();
+            Assert.assertNotNull(driver);
+            if (!appIdentifier.contains("chrome")){
+                this.driver.manage().window().maximize();}
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            Thread.sleep(5000);
         }catch(Exception e){
             e.printStackTrace();
         } finally {
