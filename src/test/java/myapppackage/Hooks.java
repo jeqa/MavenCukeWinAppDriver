@@ -50,6 +50,9 @@ public class Hooks {
         else if (scenario.getName().contains("Edge")){
             appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
         }
+        else if (scenario.getName().contains("Acrobat")){
+            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
+        }
 
 
         webDriverController.setupController(appId, appArg);
