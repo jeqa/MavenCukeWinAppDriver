@@ -48,7 +48,7 @@ public class Hooks {
             appId = "C:\\Program Files\\internet explorer\\iexplore.exe";
         }
         else if (scenario.getName().contains("Edge")){
-            appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe";
+            appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
         }
 
 
