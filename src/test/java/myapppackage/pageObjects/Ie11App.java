@@ -36,9 +36,13 @@ public class Ie11App extends BasePage {
     }
 
     public void handleIeSetUpDialog(){
-        if (driver.findElement(setUpDialogDontUseRadioButton).isDisplayed()){
-            Click(setUpDialogDontUseRadioButton);
-            Click(setUpDialogOkButton);
+        try {
+            if (driver.findElement(setUpDialogDontUseRadioButton).isDisplayed()){
+                Click(setUpDialogDontUseRadioButton);
+                Click(setUpDialogOkButton);
+            }
+        } catch (Exception e){
+
         }
     }
 

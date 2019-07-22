@@ -24,7 +24,7 @@ public class Ie11StepDefs {
     @Given("that IE has opened")
     public void that_IE_has_opened() {
         //Handle possible Set Up dialog
-        //ie11App.handleIeSetUpDialog();
+        ie11App.handleIeSetUpDialog();
     }
 
     @Then("the expected home page is displayed in IE")
