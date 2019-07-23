@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class WebDriverController {
     private WindowsDriver driver;
-    public String browserType;
+//    public String browserType;
 
     public WindowsDriver getDriver(){
         return driver;
