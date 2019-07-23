@@ -52,7 +52,8 @@ public class Hooks {
             appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
         }
         else if (scenario.getName().contains("Acrobat")){
-            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
+            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
+//            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
         }
 
 
