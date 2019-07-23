@@ -17,7 +17,7 @@ public class PowerpointApp extends BasePage {
     private static final By blankDocumentLink = By.name("Blank Presentation");
     private static final By titleTextBox = By.name("Title TextBox");
     private static final By subTitleTextBox = By.name("Subtitle TextBox");
-    private static final By slide = By.name("Slide");
+    private static final By slide = By.name("Presentation1 - PowerPoint");
     private static final By mainWindow = By.name("Presentation1 - PowerPoint");
 
 
