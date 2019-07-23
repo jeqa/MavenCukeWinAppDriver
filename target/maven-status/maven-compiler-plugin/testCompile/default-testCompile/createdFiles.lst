@@ -1,0 +1,13 @@
+myapppackage\StepDefintions\ChromeStepDefs.class
+myapppackage\pageObjects\PowerpointApp.class
+myapppackage\StepDefintions\PowerpointStepDefs.class
+myapppackage\pageObjects\ExcelApp.class
+myapppackage\Hooks.class
+myapppackage\pageObjects\WordApp.class
+myapppackage\WebDriverController.class
+myapppackage\pageObjects\ChromeApp.class
+myapppackage\pageObjects\BasePage.class
+myapppackage\StepDefintions\ExcelStepDefs.class
+myapppackage\pageObjects\SaveAsDialog.class
+myapppackage\RunCucumberTest.class
+myapppackage\StepDefintions\WordStepDefs.class
