@@ -18,14 +18,14 @@ public class ChromeApp extends BasePage {
         return homeUrl;
     }
 
-    private String targetUrl = "https://www.bbc.co.uk/news";
-    private String homeUrl = "https://www.bbc.co.uk";
+    private String targetUrl = "http://the-internet.herokuapp.com/";
+    private String homeUrl = "https://www.bbc.com";
 
 
 //  Locators
     private static final By addressBar = By.name("Address and search bar");
-    private static final By homeTab = By.name("BBC - Home - Google Chrome");
-    private static final By targetTab = By.name("Home - BBC News - Google Chrome");
+    private static final By homeTab = By.name("BBC - Homepage - Google Chrome");
+    private static final By targetTab = By.name("The Internet - Google Chrome");
 
 
     public ChromeApp(WebDriverController webDriverController){
@@ -48,7 +48,8 @@ public class ChromeApp extends BasePage {
         return isElementDisplayed(homeTab);
     }
 
-    public boolean isExpectedTargetTabDisplayed(){
+    public boolean isExpectedTargetTabDisplayed() throws InterruptedException {
+        Thread.sleep(2000);
         return isElementDisplayed(targetTab);
     }
 

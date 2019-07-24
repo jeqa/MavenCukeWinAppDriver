@@ -29,7 +29,7 @@ public class ExcelStepDefs {
     }
 
     @Given("I have opened a blank workbook")
-    public void i_have_opened_a_blank_workbook() {
+    public void i_have_opened_a_blank_workbook() throws InterruptedException {
         excelApp.selectBlankDocument();
     }
 
@@ -46,7 +46,7 @@ public class ExcelStepDefs {
     }
 
     @Given("I have created and saved a Excel Document")
-    public void i_have_created_and_saved_a_Excel_Document() {
+    public void i_have_created_and_saved_a_Excel_Document() throws InterruptedException {
         i_have_opened_a_blank_workbook();
         i_enter_text_into_cell_BFour();
         save_the_workbook();

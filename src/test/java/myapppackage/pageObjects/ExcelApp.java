@@ -29,7 +29,8 @@ public class ExcelApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-    public void selectBlankDocument(){
+    public void selectBlankDocument() throws InterruptedException {
+        Thread.sleep(2000);
         Click(fileMenuTab);
         Click(newMenuOption);
         Click(blankDocumentLink);

@@ -19,6 +19,8 @@ public class PowerpointApp extends BasePage {
     private static final By subTitleTextBox = By.name("Subtitle TextBox");
     private static final By slide = By.name("Presentation1 - PowerPoint");
     private static final By mainWindow = By.name("Presentation1 - PowerPoint");
+    private static final By slide1Image = By.name("Slide256Image");
+    private static final By slide2Image = By.name("Slide257Image");
 
 
 
@@ -32,7 +34,8 @@ public class PowerpointApp extends BasePage {
         Click(blankDocumentLink);
     }
 
-    public void clickSlide1() {
+    public void clickSlide1() throws InterruptedException {
+        Thread.sleep(2000);
         Click(slide);
     }
 
@@ -70,6 +73,10 @@ public class PowerpointApp extends BasePage {
 
     public  String getExpectedSubTitleText(){
         return subTitleText;
+    }
+
+    public boolean isSlide2ThumbImageDisplayed(){
+        return isElementDisplayed(slide2Image);
     }
 }
 

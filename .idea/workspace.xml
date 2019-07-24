@@ -2,8 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7169be1a-ec90-4a32-8dfd-799bbd66b605" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ChromeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ChromeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/EdgeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/EdgeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/Ie11App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/Ie11App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/css/cucumber.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/js/Chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/js/jquery.tablesorter.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/js/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/overview-failures.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/overview-features.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/overview-steps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/overview-tags.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-feature_1_898909839.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-feature_2_77668261.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-feature_3429700724.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-feature_3_1875021124.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-tag_1261712394.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-tag_2209291113.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-tag_4047145558.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-html-reports/report-tag_835882713.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/CucumberTestReport.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-reports/CucumberTestReport.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/cucumber-pretty/formatter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/cucumber-pretty/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/cucumber-pretty/jquery-1.8.2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/cucumber-pretty/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-reports/cucumber-pretty/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/cucumber-pretty/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/rerun.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-reports/rerun.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/my-app2-1.0.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-myapppackage.RunCucumberTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/myapppackage.RunCucumberTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/Hooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/Hooks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/StepDefintions/ChromeStepDefs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/StepDefintions/ChromeStepDefs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/StepDefintions/ExcelStepDefs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/StepDefintions/ExcelStepDefs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/StepDefintions/PowerpointStepDefs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/StepDefintions/PowerpointStepDefs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/ChromeApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/ChromeApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/EdgeApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/EdgeApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/ExcelApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/ExcelApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/Ie11App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/Ie11App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/PowerpointApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/myapppackage/pageObjects/PowerpointApp.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,66 +84,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/Hooks.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+            <state relative-caret-position="124">
+              <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
+              <folding>
+                <element signature="e#879#880#0" expanded="true" />
+                <element signature="e#952#953#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/RunCucumberTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/excelTest.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="49" column="38" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+            <state relative-caret-position="274">
+              <caret line="99" column="69" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#879#880#0" expanded="true" />
-                <element signature="e#952#953#0" expanded="true" />
-                <element signature="e#1206#1207#0" expanded="true" />
-                <element signature="e#1281#1282#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/chromeTest.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1038#1039#0" expanded="true" />
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1372#1373#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +159,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="223">
+              <caret line="78" column="47" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+              <folding>
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1225#1226#0" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
+                <element signature="e#2280#2281#0" expanded="true" />
+                <element signature="e#2322#2323#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -101,33 +188,36 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Powerpoint" />
+        <entry key="$PROJECT_DIR$" value="Master" />
       </map>
     </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/myapppackage/chromeTest.feature" />
         <option value="$PROJECT_DIR$/src/test/resources/myapppackage/ie11Test.feature" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ChromeApp.java" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/Ie11StepDefs.java" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/Ie11App.java" />
         <option value="$PROJECT_DIR$/src/test/resources/myapppackage/edgeTest.feature" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/EdgeStepDefs.java" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/EdgeApp.java" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/AcrobatReaderApp.java" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/AcrobatReaderStepDefs.java" />
         <option value="$PROJECT_DIR$/src/test/resources/myapppackage/acrobatReaderTest.feature" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/Hooks.java" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/EdgeApp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/Ie11App.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ChromeApp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/resources/myapppackage/excelTest.feature" />
+        <option value="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java" />
       </list>
     </option>
   </component>
@@ -158,7 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,7 +319,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,7 +328,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -261,7 +351,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Feature: powerpointTest">
+  <component name="RunManager" selected="Cucumber java.Scenario: Create and Save Powerpoint file with added slide">
+    <configuration name="Feature: excelTest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="4" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/myapppackage/excelTest.feature" />
+      <option name="GLUE" value="myapppackage" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+      <module name="MavenCucumberWinAppDriver" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: excelTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Feature: powerpointTest" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="4" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" />
@@ -280,15 +388,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Acrobat Reader" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Create and Save Powerpoint file with added slide" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/myapppackage/acrobatReaderTest.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" />
       <option name="GLUE" value="myapppackage" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="MavenCucumberWinAppDriver" />
-      <option name="NAME_FILTER" value="^Acrobat Reader$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Acrobat Reader$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Acrobat Reader" />
+      <option name="NAME_FILTER" value="^Create and Save Powerpoint file with added slide$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Create and Save Powerpoint file with added slide$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Create and Save Powerpoint file with added slide" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -318,51 +426,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Edge home page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/myapppackage/edgeTest.feature" />
-      <option name="GLUE" value="myapppackage" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+    <configuration name="RunCucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MavenCucumberWinAppDriver" />
-      <option name="NAME_FILTER" value="^Edge home page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Edge home page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Edge home page" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="PATTERN" value="myapppackage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Update and Save Powerpoint file" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature" />
-      <option name="GLUE" value="myapppackage" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="MavenCucumberWinAppDriver" />
-      <option name="NAME_FILTER" value="^Update and Save Powerpoint file$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Update and Save Powerpoint file$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Update and Save Powerpoint file" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="myapppackage" />
+      <option name="MAIN_CLASS_NAME" value="myapppackage.RunCucumberTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Scenario: Create and Save Powerpoint file with added slide" />
+        <item itemvalue="JUnit.RunCucumberTest" />
+        <item itemvalue="Cucumber java.Feature: excelTest" />
         <item itemvalue="Cucumber java.Feature: powerpointTest" />
-        <item itemvalue="Cucumber java.Scenario: Update and Save Powerpoint file" />
         <item itemvalue="Cucumber java.Scenario: Create and Save Powerpoint file" />
-        <item itemvalue="Cucumber java.Scenario: Acrobat Reader" />
-        <item itemvalue="Cucumber java.Scenario: Edge home page" />
       </list>
     </recent_temporary>
   </component>
@@ -465,64 +550,64 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Scenario__Chrome_home_page - 2019.07.23 at 03h 12m 22s.xml">
-      <configuration name="Scenario: Chrome home page" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Feature__excelTest - 2019.07.24 at 14h 54m 13s.xml">
+      <configuration name="Feature: excelTest" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__Edge_home_page - 2019.07.23 at 04h 19m 53s.xml">
-      <configuration name="Scenario: Edge home page" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Feature__excelTest - 2019.07.24 at 14h 57m 23s.xml">
+      <configuration name="Feature: excelTest" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__Acrobat_Reader - 2019.07.23 at 04h 21m 15s.xml">
-      <configuration name="Scenario: Acrobat Reader" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="RunCucumberTest - 2019.07.24 at 15h 00m 41s.xml">
+      <configuration name="RunCucumberTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Feature__powerpointTest - 2019.07.23 at 04h 37m 26s.xml">
-      <configuration name="Feature: powerpointTest" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 35m 44s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__Create_and_Save_Powerpoint_file - 2019.07.23 at 04h 39m 17s.xml">
-      <configuration name="Scenario: Create and Save Powerpoint file" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 37m 36s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__Create_and_Save_Powerpoint_file - 2019.07.23 at 04h 42m 03s.xml">
-      <configuration name="Scenario: Create and Save Powerpoint file" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 39m 59s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__powerpointTest - 2019.07.23 at 04h 43m 55s.xml">
-      <configuration name="Feature: powerpointTest" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 42m 27s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__powerpointTest - 2019.07.23 at 04h 45m 21s.xml">
-      <configuration name="Feature: powerpointTest" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 44m 11s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Scenario__Update_and_Save_Powerpoint_file - 2019.07.23 at 04h 47m 33s.xml">
-      <configuration name="Scenario: Update and Save Powerpoint file" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 51m 40s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
-    <history-entry file="Feature__powerpointTest - 2019.07.23 at 04h 49m 27s.xml">
-      <configuration name="Feature: powerpointTest" configurationId="CucumberJavaRunConfigurationType" />
+    <history-entry file="Scenario__Create_and_Save_Powerpoint_file_with_added_slide - 2019.07.24 at 15h 52m 20s.xml">
+      <configuration name="Scenario: Create and Save Powerpoint file with added slide" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49663526" visible="true" weight="0.24742931" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49663526" visible="true" weight="0.2549168" />
       <window_info id="Structure" order="1" sideWeight="0.502008" side_tool="true" weight="0.23136246" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.50336474" side_tool="true" weight="0.2377892" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32974428" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.32974428" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39973083" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.39934534" />
+      <window_info anchor="bottom" id="Debug" order="4" visible="true" weight="0.17184943" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.37281293" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3715221" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50064266" side_tool="true" weight="0.23822342" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4993573" weight="0.23822342" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.11825193" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.118003026" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -547,12 +632,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ChromeApp.java</url>
-          <line>9</line>
-          <properties field="driver" class="myapppackage.pageObjects.ChromeApp" />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java</url>
           <line>37</line>
@@ -560,16 +639,40 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java</url>
-          <line>34</line>
+          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java</url>
+          <line>40</line>
           <properties />
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java</url>
-          <line>33</line>
+          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java</url>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java</url>
+          <line>48</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java</url>
+          <line>91</line>
+          <properties />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -586,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="97" column="102" selection-start-line="97" selection-start-column="102" selection-end-line="97" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/7.0.0/java-client-7.0.0.jar!/io/appium/java_client/DefaultGenericMobileDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
@@ -620,46 +716,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/Ie11App.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/EdgeApp.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/Ie11StepDefs.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/AcrobatReaderStepDefs.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/AcrobatReaderApp.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="74" selection-start-line="101" selection-start-column="74" selection-end-line="101" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/RunCucumberTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/ie11Test.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/wordTest.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/excelTest.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="18" lean-forward="true" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/picocontainer/picocontainer/2.15/picocontainer-2.15.jar!/org/picocontainer/injectors/AbstractInjector.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -684,29 +742,152 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="123" column="59" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/Hooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="74" column="26" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/wordTest.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/EdgeStepDefs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="209">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/EdgeApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+          <folding>
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+            <element signature="e#1327#1328#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/edgeTest.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/Ie11StepDefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <element signature="e#883#884#0" expanded="true" />
+            <element signature="e#954#955#0" expanded="true" />
+            <element signature="e#1230#1231#0" expanded="true" />
+            <element signature="e#1303#1304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/Ie11App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <folding>
+            <element signature="e#1822#1823#0" expanded="true" />
+            <element signature="e#1874#1875#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/ie11Test.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/7.0.0/java-client-7.0.0.jar!/io/appium/java_client/DefaultGenericMobileDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ChromeApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="239">
+          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
           <folding>
             <element signature="e#1283#1284#0" expanded="true" />
             <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1385#1386#0" expanded="true" />
-            <element signature="e#1437#1438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="40" column="68" selection-start-line="40" selection-start-column="68" selection-end-line="40" selection-end-column="68" />
+          <folding>
+            <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/chromeTest.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -718,91 +899,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="49" column="38" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/RunCucumberTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/excelTest.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="78" column="47" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
+          <folding>
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
+            <element signature="e#2280#2281#0" expanded="true" />
+            <element signature="e#2322#2323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/PowerpointStepDefs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+        <state relative-caret-position="274">
+          <caret line="99" column="69" selection-start-line="99" selection-start-column="69" selection-end-line="99" selection-end-column="69" />
           <folding>
             <element signature="e#987#988#0" expanded="true" />
             <element signature="e#1038#1039#0" expanded="true" />
             <element signature="e#1323#1324#0" expanded="true" />
             <element signature="e#1372#1373#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-remote-driver/3.141.59/selenium-remote-driver-3.141.59.jar!/org/openqa/selenium/remote/RemoteWebDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="123" column="59" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/powerpointTest.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/Hooks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ChromeStepDefs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#879#880#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#1206#1207#0" expanded="true" />
-            <element signature="e#1281#1282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/chromeTest.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="71" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/PowerpointApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>

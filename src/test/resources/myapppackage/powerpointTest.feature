@@ -14,3 +14,9 @@ Feature: PowerPointTest
     And save the Powerpoint file using existing filename
     Then the updated slide text is retained
 
+  Scenario: Create and Save Powerpoint file with added slide
+    Given I have opened Powerpoint
+    When I add a slide to the Powerpoint file
+    And save the Powerpoint file
+    Then the added slide is retained
+
