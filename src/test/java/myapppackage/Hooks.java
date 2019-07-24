@@ -43,12 +43,17 @@ public class Hooks {
         }
         else if (scenario.getName().contains("Chrome")){
             appId = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
+            appArg = "--start-maximized";
         }
         else if (scenario.getName().contains("IE11")){
             appId = "C:\\Program Files\\internet explorer\\iexplore.exe";
         }
         else if (scenario.getName().contains("Edge")){
-            appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe";
+            appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
+        }
+        else if (scenario.getName().contains("Acrobat")){
+            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
+//            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
         }
 
 
