@@ -88,7 +88,7 @@ public class PowerpointStepDefs {
     }
 
     @When("I add a slide to the Powerpoint file")
-    public void i_add_a_slide_to_the_Powerpoint_file() {
+    public void i_add_a_slide_to_the_Powerpoint_file()throws InterruptedException {
         powerpointApp.focusOnMainWindow();
         powerpointApp.addSlide();
     }

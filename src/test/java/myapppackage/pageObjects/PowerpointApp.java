@@ -1,9 +1,13 @@
 package myapppackage.pageObjects;
 
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+
+import java.security.Key;
 
 public class PowerpointApp extends BasePage {
 
@@ -19,8 +23,8 @@ public class PowerpointApp extends BasePage {
     private static final By subTitleTextBox = By.name("Subtitle TextBox");
     private static final By slide = By.name("Presentation1 - PowerPoint");
     private static final By mainWindow = By.name("Presentation1 - PowerPoint");
-    private static final By slide1Image = By.name("Slide256Image");
-    private static final By slide2Image = By.name("Slide257Image");
+    private static final By slide2Image = By.name("Slide 2");
+    private static final String slide2ImageAutomationId = "Slide257Image";
 
 
 
@@ -43,8 +47,15 @@ public class PowerpointApp extends BasePage {
         Click(mainWindow);
     }
 
-    public void addSlide(){
+    public void addSlide() throws InterruptedException{
         driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "m"));
+        //Thread.sleep(5000);
+        //driver.findElementByName("Workspace").click();
+       // clickSlide1();
+        driver.getKeyboard().sendKeys(Keys.TAB);
+        driver.getKeyboard().sendKeys("2");
+        //driver.findElementByName("Slide 2").click();
+        //enterTextViaSendKeys(titleTextBox, "2");
     }
 
 
@@ -76,7 +87,12 @@ public class PowerpointApp extends BasePage {
     }
 
     public boolean isSlide2ThumbImageDisplayed(){
-        return isElementDisplayed(slide2Image);
+        try {
+            driver.findElementByName("Slide 2").isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }
 
