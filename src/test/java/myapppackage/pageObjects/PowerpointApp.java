@@ -49,13 +49,8 @@ public class PowerpointApp extends BasePage {
 
     public void addSlide() throws InterruptedException{
         driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "m"));
-        //Thread.sleep(5000);
-        //driver.findElementByName("Workspace").click();
-       // clickSlide1();
         driver.getKeyboard().sendKeys(Keys.TAB);
         driver.getKeyboard().sendKeys("2");
-        //driver.findElementByName("Slide 2").click();
-        //enterTextViaSendKeys(titleTextBox, "2");
     }
 
 

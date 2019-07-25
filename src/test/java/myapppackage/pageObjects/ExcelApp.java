@@ -67,23 +67,7 @@ public class ExcelApp extends BasePage {
         return d9UpdateText;
     }
 
-//    public String getDocumentText(){
-//        return Find(document).getText().replace("\r", "");
-//    }
-//
-//    public String getInitialText(){
-//        return initialText;
-//    }
-//
-//    public String getUpdateText(){
-//        return updateText;
-//    }
-//
-//    public void updateTextInWordDocument(){
-//        Click(document);
-//        Find(document).sendKeys(Keys.SPACE);
-//        enterTextViaSendKeys(document, updateText);
-//    }
+
 
 
     }
