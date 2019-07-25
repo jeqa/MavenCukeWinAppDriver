@@ -20,10 +20,7 @@ public class OutlookApp extends BasePage {
 
 
     private static final By newEmailButton = By.name("New Email");
-    private static final By newEmailPage = By.name("Page 1 content");
-    private static final By newEmail = By.name("Untitled Message");
-    private static final By emailToInput = By.name("To");
-    private static final String subjectInput = ("4101");
+
 
     private WindowsDriver driver;
     WebDriverController webDriverController;
@@ -70,6 +67,10 @@ public class OutlookApp extends BasePage {
 
         driver.getKeyboard().sendKeys(Keys.chord(Keys.ALT, "s"));
 
+    }
+
+    public void asserNewEmail() {
+        
     }
 
 

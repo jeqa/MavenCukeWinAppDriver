@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c9bb7b-4ea5-410c-8f40-8889baedea59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/OutlookApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/Hooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/ExcelStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/OutlookStepDef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/OutlookStepDef.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/WordStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/WordStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/ExcelApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/WordApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/WordApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/myapppackage/excelTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/myapppackage/ExcelTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/myapppackage/wordTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/myapppackage/WordTest.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/OutlookApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/OutlookApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,20 +20,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/OutlookApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="33" />
+            <state relative-caret-position="481">
+              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/7.0.0/java-client-7.0.0-sources.jar!/io/appium/java_client/FindsByWindowsAutomation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -63,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -123,9 +104,9 @@
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/WordStepDefs.java" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/WebDriverController.java" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/BasePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/OutlookStepDef.java" />
         <option value="$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature" />
         <option value="$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/OutlookApp.java" />
-        <option value="$PROJECT_DIR$/src/test/java/myapppackage/StepDefintions/OutlookStepDef.java" />
       </list>
     </option>
   </component>
@@ -467,10 +448,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/7.0.0/java-client-7.0.0-sources.jar!/io/appium/java_client/FindsByWindowsAutomation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        <state relative-caret-position="226">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -484,17 +465,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/7.0.0/java-client-7.0.0-sources.jar!/io/appium/java_client/FindsByWindowsAutomation.java">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/myapppackage/OutlookTest.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/myapppackage/pageObjects/OutlookApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="62" column="8" lean-forward="true" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="33" />
+        <state relative-caret-position="481">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
