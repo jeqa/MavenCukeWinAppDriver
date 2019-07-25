@@ -1,0 +1,1 @@
+powershell.exe -WindowStyle hidden -ExecutionPolicy bypass .\QA_Test_Runner.ps1
