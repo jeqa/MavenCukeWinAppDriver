@@ -27,12 +27,13 @@ public class Hooks {
         String appArg = "";
 
         if (scenario.getName().contains("Word")){
-            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe";
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.exe";
             appArg = "/q";
-        }
-        else if (scenario.getName().contains("Excel")){
-            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
+        } else if (scenario.getName().contains("Excel")){
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appArg = "/e";
+        } else if (scenario.getName().contains("Outlook")){
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE";
         }
 
 

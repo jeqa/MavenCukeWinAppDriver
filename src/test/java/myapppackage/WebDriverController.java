@@ -1,11 +1,6 @@
 package myapppackage;
 
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.Capabilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.appium.java_client.windows.WindowsDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,20 +19,25 @@ public class WebDriverController {
         this.driver = driver;
     }
 
-    public void setupController(String appIdentifier, String appArgument){
+    public WindowsDriver setupController(String appIdentifier, String appArgument){
         try{
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("app", appIdentifier);
+
             if (appArgument.length() > 0){
                 capabilities.setCapability("appArguments", appArgument);}
+
             this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
-            this.driver.manage().window().maximize();
+
+
+//            this.driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         }catch(Exception e){
             e.printStackTrace();
         } finally {
         }
 
+        return null;
     }
 
 

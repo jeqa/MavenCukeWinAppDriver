@@ -32,7 +32,7 @@ public class WordApp extends BasePage {
         Click(blankDocumentLink);
     }
 
-    public void enterTextInWordDocument(){
+    public void enterTextInWordDocument() throws InterruptedException {
         enterTextViaSendKeys(document, initialText);
     }
 
@@ -60,7 +60,7 @@ public class WordApp extends BasePage {
         return updateText;
     }
 
-    public void updateTextInWordDocument(){
+    public void updateTextInWordDocument() throws InterruptedException {
         Click(document);
         Find(document).sendKeys(Keys.SPACE);
         enterTextViaSendKeys(document, updateText);

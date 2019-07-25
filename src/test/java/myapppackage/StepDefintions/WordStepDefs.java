@@ -33,7 +33,7 @@ public class WordStepDefs {
     }
 
     @When("I enter text")
-    public void i_enter_text() {
+    public void i_enter_text() throws InterruptedException {
         wordApp.enterTextInWordDocument();
     }
 
@@ -53,14 +53,14 @@ public class WordStepDefs {
     }
 
     @Given("I have created and saved a Word Document")
-    public void i_have_created_and_saved_a_Word_Document() {
+    public void i_have_created_and_saved_a_Word_Document() throws InterruptedException {
         i_have_opened_Word();
         i_enter_text();
         save_the_document();
     }
 
     @When("I update the text")
-    public void i_update_the_text() {
+    public void i_update_the_text() throws InterruptedException {
         wordApp.reopenWord();
         wordApp.openExistingDocument(fileName + ".docx");
         wordApp.updateTextInWordDocument();
