@@ -17,7 +17,7 @@ public class NotepadStepDefs {
     //private WebDriver driver;
     private WebDriverController webDriverController;
     private NotepadApp notepadApp;
-    SaveAsDialog saveAsDialog;
+    private SaveAsDialog saveAsDialog;
     private String fileName;
 
 
@@ -34,13 +34,13 @@ public class NotepadStepDefs {
 
     @When("I enter text into the text file")
     public void i_enter_text_into_the_text_file() {
-        notepadApp.enterInitialText();
+        notepadApp.enterText();
     }
 
     @When("save the text file")
     public void save_the_text_file() {
         String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        fileName = "wordfile_" + timestamp;
+        fileName = "textfile_" + timestamp;
         saveAsDialog.saveFileWithCtrlPlusSWithoutBrowse(fileName);
         notepadApp.closeApp();
     }
@@ -52,6 +52,35 @@ public class NotepadStepDefs {
         String expectedText = notepadApp.getInitialText();
         String notepadText = notepadApp.getNotepadText();
         Assert.assertTrue("Expected text '" + expectedText + "' was not matched with '" + notepadText,
+                expectedText.equalsIgnoreCase(notepadText));
+    }
+
+    @Given("I have created and saved a text file")
+    public void i_have_created_and_saved_a_text_file() {
+        i_enter_text_into_the_text_file();
+        save_the_text_file();
+    }
+
+    @When("I update the text file")
+    public void i_update_the_text_file() {
+        notepadApp.launchApp();
+        notepadApp.openSavedTextFileInNotepad(fileName);
+        notepadApp.updateTextinTextFile();
+    }
+
+    @When("save the text file using existing filename")
+    public void save_the_text_file_using_existing_filename() {
+        saveAsDialog.saveFileWithCtrlPlusS();
+        notepadApp.closeApp();
+    }
+
+    @Then("the updated text is retained in the text file")
+    public void the_updated_text_is_retained_in_the_text_file() {
+        notepadApp.launchApp();
+        notepadApp.openSavedTextFileInNotepad(fileName);
+        String expectedText = notepadApp.getInitialText() + notepadApp.getUpdateText();
+        String notepadText = notepadApp.getNotepadText();
+        Assert.assertTrue("Expected text '" + expectedText + "' was not matched with '" + notepadText +"'!",
                 expectedText.equalsIgnoreCase(notepadText));
     }
 

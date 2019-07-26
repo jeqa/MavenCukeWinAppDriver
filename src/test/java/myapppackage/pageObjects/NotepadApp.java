@@ -27,14 +27,13 @@ public class NotepadApp extends BasePage {
         return updateText;
     }
 
-
     public NotepadApp(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
     }
 
-    public void enterInitialText(){
+    public void enterText(){
         enterTextViaSendKeys(textEditor, initialText);
     }
 
@@ -48,6 +47,11 @@ public class NotepadApp extends BasePage {
         driver.findElementByAccessibilityId("1148").clear();
         driver.findElementByAccessibilityId("1148").sendKeys(filename + ".txt");
         driver.findElementByAccessibilityId("1").click();
+    }
+
+    public void updateTextinTextFile(){
+        Find(textEditor).sendKeys(Keys.END);
+        enterTextViaSendKeys(textEditor, updateText);
     }
 
 }
