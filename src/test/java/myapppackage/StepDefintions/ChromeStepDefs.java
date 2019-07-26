@@ -37,7 +37,7 @@ public class ChromeStepDefs {
     }
 
     @Then("the expected site is displayed")
-    public void the_expected_site_is_displayed() {
+    public void the_expected_site_is_displayed() throws InterruptedException {
         Assert.assertTrue(chromeApp.isExpectedTargetTabDisplayed());
     }
 

@@ -34,7 +34,7 @@ public class PowerpointStepDefs {
     }
 
     @When("I enter text into the Title box")
-    public void i_enter_text_into_the_Title_box() {
+    public void i_enter_text_into_the_Title_box() throws InterruptedException {
         powerpointApp.clickSlide1();
         powerpointApp.enterTitleText();
     }
@@ -61,7 +61,7 @@ public class PowerpointStepDefs {
     }
 
     @Given("I have created and saved a Powerpoint file")
-    public void i_have_created_and_saved_a_Powerpoint_file() {
+    public void i_have_created_and_saved_a_Powerpoint_file() throws InterruptedException {
         i_have_opened_Powerpoint();
         i_enter_text_into_the_Title_box();
         save_the_Powerpoint_file();
@@ -88,15 +88,16 @@ public class PowerpointStepDefs {
     }
 
     @When("I add a slide to the Powerpoint file")
-    public void i_add_a_slide_to_the_Powerpoint_file() {
+    public void i_add_a_slide_to_the_Powerpoint_file()throws InterruptedException {
         powerpointApp.focusOnMainWindow();
         powerpointApp.addSlide();
     }
 
     @Then("the added slide is retained")
     public void the_added_slide_is_retained() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        powerpointApp.launchApp();
+        powerpointApp.openExistingPresentation(fileName + ".pptx");
+        Assert.assertTrue(powerpointApp.isSlide2ThumbImageDisplayed());
     }
 
 }

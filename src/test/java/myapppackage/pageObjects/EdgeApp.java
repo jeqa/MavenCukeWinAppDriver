@@ -17,12 +17,12 @@ public class EdgeApp extends BasePage {
         return homeUrl;
     }
 
-    private String targetUrl = "https://www.bbc.co.uk/news";
+    private String targetUrl = "https://www.bbc.com/news";
     private String homeUrl = "https://www.bbc.co.uk/";
 
 //  Locators
     private static final By addressBar = By.name("Search or enter web address");
-    private static final By homeTab = By.name("BBC - Home tab");
+    private static final By homeTab = By.name("BBC - Homepage tab");
     private static final By targetTab = By.name("Home - BBC News tab");
 
 
