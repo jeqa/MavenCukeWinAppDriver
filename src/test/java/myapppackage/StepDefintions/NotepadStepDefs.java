@@ -42,13 +42,20 @@ public class NotepadStepDefs {
         String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         fileName = "wordfile_" + timestamp;
         saveAsDialog.saveFileWithCtrlPlusSWithoutBrowse(fileName);
+        notepadApp.closeApp();
     }
 
     @Then("the entered text is retained in the text file")
     public void the_entered_text_is_retained_in_the_text_file() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        notepadApp.launchApp();
+        notepadApp.openSavedTextFileInNotepad(fileName);
+        String expectedText = notepadApp.getInitialText();
+        String notepadText = notepadApp.getNotepadText();
+        Assert.assertTrue("Expected text '" + expectedText + "' was not matched with '" + notepadText,
+                expectedText.equalsIgnoreCase(notepadText));
     }
+
+
 
 
 }
