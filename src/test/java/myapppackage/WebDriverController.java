@@ -1,5 +1,6 @@
 package myapppackage;
 
+
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.appium.java_client.windows.WindowsDriver;
@@ -9,7 +10,7 @@ import java.net.URL;
 
 public class WebDriverController {
     private WindowsDriver driver;
-    public String browserType;
+//    public String browserType;
 
     public WindowsDriver getDriver(){
         return driver;
@@ -28,10 +29,11 @@ public class WebDriverController {
                 capabilities.setCapability("appArguments", appArgument);}
 
             this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
-
-
-//            this.driver.manage().window().maximize();
+            Assert.assertNotNull(driver);
+            if (!appIdentifier.contains("chrome")){
+                this.driver.manage().window().maximize();}
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            Thread.sleep(5000);
         }catch(Exception e){
             e.printStackTrace();
         } finally {

@@ -29,7 +29,8 @@ public class ExcelApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-    public void selectBlankDocument(){
+    public void selectBlankDocument() throws InterruptedException {
+        Thread.sleep(2000);
         Click(fileMenuTab);
         Click(newMenuOption);
         Click(blankDocumentLink);
@@ -66,23 +67,7 @@ public class ExcelApp extends BasePage {
         return d9UpdateText;
     }
 
-//    public String getDocumentText(){
-//        return Find(document).getText().replace("\r", "");
-//    }
-//
-//    public String getInitialText(){
-//        return initialText;
-//    }
-//
-//    public String getUpdateText(){
-//        return updateText;
-//    }
-//
-//    public void updateTextInWordDocument(){
-//        Click(document);
-//        Find(document).sendKeys(Keys.SPACE);
-//        enterTextViaSendKeys(document, updateText);
-//    }
+
 
 
     }

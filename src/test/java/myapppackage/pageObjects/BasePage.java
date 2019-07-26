@@ -3,6 +3,7 @@ package myapppackage.pageObjects;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.*;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import java.util.concurrent.TimeUnit;
+
 
 public class BasePage {
 
@@ -75,6 +77,7 @@ public class BasePage {
         Find(locator).sendKeys(inputText);
     }
 
+
     public WebElement getElement(By selector) {
         try {
             return driver.findElement(selector);
@@ -108,7 +111,6 @@ public class BasePage {
         }
     }
 
-
     public void sendKeys(By selector, String value) {
         WebElement element = getElement(selector);
         element.click();
@@ -122,6 +124,7 @@ public class BasePage {
 
     public void enterTextViaSendKeys(By locator, String inputText) throws InterruptedException {
         Thread.sleep(5000);
+        Click(locator);
         Find(locator).sendKeys(inputText);
     }
 
@@ -138,6 +141,7 @@ public class BasePage {
         switchWindows();
         driver.launchApp();
     }
+
 
     public void waitUntilTheFrameIsVisibleAndSwitch(WebElement element) throws Exception {
         try {
@@ -181,7 +185,6 @@ public class BasePage {
         }
     }
 
-
     public void waitUntilAsyncWebElementIsVisible(String xpath) {
         org.openqa.selenium.support.ui.Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
                 .pollingEvery(5, TimeUnit.SECONDS).ignoring(WebDriverException.class);
@@ -204,5 +207,23 @@ public class BasePage {
         CurrentFrame = currentFrame;
     }
 
+    public boolean isElementDisplayed(By locator){
+        try {
+            Find(locator).isDisplayed();
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+//    Browsers
+
+    public String getCurrentUrlFromAddressBar(By locator){
+        return Find(locator).getText();
+    }
+    public void navigateToSiteViaAddressBar(By locator, String url){
+        ClearAndTypeIntoField(locator, url);
+        Find(locator).sendKeys(Keys.ENTER);
+    }
 
 }

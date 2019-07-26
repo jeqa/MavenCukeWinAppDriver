@@ -19,7 +19,7 @@ public class WordStepDefs {
     WordApp wordApp;
     SaveAsDialog saveAsDialog;
 
-    public String fileName;
+    private String fileName;
 
     public WordStepDefs(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
@@ -79,6 +79,8 @@ public class WordStepDefs {
         String allText = wordApp.getInitialText() + " " + wordApp.getUpdateText();
         Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(allText));
     }
+
+
 
 
 

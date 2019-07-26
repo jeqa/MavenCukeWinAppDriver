@@ -29,7 +29,7 @@ public class ExcelStepDefs {
     }
 
     @Given("I have opened a blank workbook")
-    public void i_have_opened_a_blank_workbook() {
+    public void i_have_opened_a_blank_workbook() throws InterruptedException {
         excelApp.selectBlankDocument();
     }
 
