@@ -35,6 +35,8 @@ public class Hooks {
 //            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appArg = "/e";
+        } else if (scenario.getName().contains("Outlook")){
+            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE";
         }
         else if (scenario.getName().contains("Powerpoint")){
 //            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.exe";

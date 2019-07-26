@@ -36,7 +36,7 @@ public class ExcelApp extends BasePage {
         Click(blankDocumentLink);
     }
 
-    public void enterTextInCell(String cell, String text){
+    public void enterTextInCell(String cell, String text) throws InterruptedException {
         Click(By.name(cell));
         enterTextViaSendKeys(By.name(cell), text);
     }

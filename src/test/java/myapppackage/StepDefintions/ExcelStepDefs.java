@@ -34,7 +34,7 @@ public class ExcelStepDefs {
     }
 
     @When("I enter text into cell BFour")
-    public void i_enter_text_into_cell_BFour(){
+    public void i_enter_text_into_cell_BFour() throws InterruptedException {
         excelApp.enterTextInCell("B4", excelApp.getB4InitialText());
     }
 
@@ -53,7 +53,7 @@ public class ExcelStepDefs {
     }
 
     @When("I update by entering text into cell DNine")
-    public void i_update_by_entering_text_into_cell_DNine() {
+    public void i_update_by_entering_text_into_cell_DNine() throws InterruptedException {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
         excelApp.enterTextInCell("D9", excelApp.getD9UpdateText());
