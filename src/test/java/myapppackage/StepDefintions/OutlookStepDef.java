@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import myapppackage.WebDriverController;
 import myapppackage.pageObjects.OutlookApp;
 import myapppackage.pageObjects.SaveAsDialog;
+import org.junit.Assert;
 
 import java.net.MalformedURLException;
 
@@ -30,20 +31,23 @@ public class OutlookStepDef {
 
     @When("I click the New Email button")
     public void iClickTheNewEmailButton() throws InterruptedException, MalformedURLException {
+        Thread.sleep(5000);
         outlookApp.clickNewEmail();
     }
 
-    @And("A User Enters some text into an email")
-    public void aUserEntersSomeTextIntoAnEmail() throws InterruptedException, MalformedURLException {
-        outlookApp.enterText("Demo text");
+    @And("The user composes the E-mail")
+    public void theUserComposesTheEmail() throws InterruptedException, MalformedURLException {
+        outlookApp.composeEmail("Demo text","Demo","testuser1@erslabs.onmicrosoft.com");
     }
 
 
-    @Then("the User can send the e-mail the recipient")
-    public void theUserCanSendTheEMailTheRecipient() {
-        outlookApp.enterSubject();
-        outlookApp.enterEmailAddress();
+    @Then("the User can send the e-mail to the recipient and confirm the email has been received")
+    public void theUserCanSendTheEMailTheRecipient() throws InterruptedException {
         outlookApp.pressSend();
+        Thread.sleep(2000);
+        Assert.assertTrue(outlookApp.asserNewEmail().equalsIgnoreCase("Demo text"));
+        outlookApp.deleteEmail();
+
 
     }
 }

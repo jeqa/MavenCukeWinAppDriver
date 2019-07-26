@@ -2,7 +2,6 @@ package myapppackage.pageObjects;
 
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -11,10 +10,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 public class OutlookApp extends BasePage {
 
@@ -37,31 +32,24 @@ public class OutlookApp extends BasePage {
         ClickWithSplashScreen(newEmailButton);
     }
 
-    public void enterText(String text) throws InterruptedException, MalformedURLException {
+    public void composeEmail(String mailText, String subjectText, String toText ) throws InterruptedException, MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("app", "Root");
         driver = new WindowsDriver<>(new URL("http://127.0.0.1:4723"), capabilities);
 
-
-        WebElement mailContent = driver.findElementByName("Page 1 content");
-        Actions performAct = new Actions(driver);
-        performAct.sendKeys(mailContent, text).build().perform();
-    }
-
-    public void enterEmailAddress() {
+        Thread.sleep(2000);
         WebElement emailAddressInput = driver.findElementByName("To");
-        Actions performAct = new Actions(driver);
-        performAct.sendKeys(emailAddressInput, "testuser1@erslabs.onmicrosoft.com").build().perform();
-
-    }
-
-    public void enterSubject() {
+        WebElement mailContent = driver.findElementByName("Page 1 content");
         WebElement subjectInput = driver.findElementByAccessibilityId("4101");
+
         Actions performAct = new Actions(driver);
-        performAct.sendKeys(subjectInput, "Demo").build().perform();
+        performAct.sendKeys(mailContent, mailText).build().perform();
+        performAct.sendKeys(emailAddressInput, toText).build().perform();
+        performAct.sendKeys(subjectInput, subjectText).build().perform();
 
     }
+
 
     public void pressSend() {
 
@@ -69,14 +57,16 @@ public class OutlookApp extends BasePage {
 
     }
 
-    public void asserNewEmail() {
-        
+    public String asserNewEmail() {
+        String getEMailBody = driver.findElementByName("Page 1 content").getText().replace("\r", "");
+        return getEMailBody;
+
     }
 
-
-
-
-
+    public void deleteEmail(){
+        driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        driver.getKeyboard().sendKeys(Keys.chord(Keys.DELETE));
+    }
 
 
     }
