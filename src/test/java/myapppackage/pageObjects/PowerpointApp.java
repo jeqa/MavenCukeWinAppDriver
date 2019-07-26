@@ -54,10 +54,10 @@ public class PowerpointApp extends BasePage {
     }
 
 
-    public void enterTitleText() {enterTextViaSendKeys(titleTextBox, titleText);
+    public void enterTitleText() throws InterruptedException {enterTextViaSendKeys(titleTextBox, titleText);
     }
 
-    public void enterSubTitleText() {
+    public void enterSubTitleText() throws InterruptedException {
         enterTextViaSendKeys(subTitleTextBox, subTitleText);
     }
 

@@ -40,7 +40,7 @@ public class PowerpointStepDefs {
     }
 
     @When("I enter text into the subtitle box")
-    public void i_enter_text_into_the_subtitle_box() {
+    public void i_enter_text_into_the_subtitle_box() throws InterruptedException {
         powerpointApp.enterSubTitleText();
     }
 
@@ -68,7 +68,7 @@ public class PowerpointStepDefs {
     }
 
     @When("I update the Powerpoint file")
-    public void i_update_the_Powerpoint_file() {
+    public void i_update_the_Powerpoint_file() throws InterruptedException {
         powerpointApp.launchApp();
         powerpointApp.openExistingPresentation(fileName + ".pptx");
         i_enter_text_into_the_subtitle_box();

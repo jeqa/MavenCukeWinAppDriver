@@ -1,6 +1,7 @@
 package myapppackage;
 
 
+import org.junit.Assert;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import io.appium.java_client.windows.WindowsDriver;
