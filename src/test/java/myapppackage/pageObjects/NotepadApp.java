@@ -33,7 +33,7 @@ public class NotepadApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-    public void enterText(){
+    public void enterText() throws InterruptedException {
         enterTextViaSendKeys(textEditor, initialText);
     }
 
@@ -49,7 +49,7 @@ public class NotepadApp extends BasePage {
         driver.findElementByAccessibilityId("1").click();
     }
 
-    public void updateTextinTextFile(){
+    public void updateTextinTextFile() throws InterruptedException {
         Find(textEditor).sendKeys(Keys.END);
         enterTextViaSendKeys(textEditor, updateText);
     }

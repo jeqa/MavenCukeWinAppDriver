@@ -23,8 +23,7 @@ public class PowerpointApp extends BasePage {
     private static final By subTitleTextBox = By.name("Subtitle TextBox");
     private static final By slide = By.name("Presentation1 - PowerPoint");
     private static final By mainWindow = By.name("Presentation1 - PowerPoint");
-    private static final By slide2Image = By.name("Slide 2");
-    private static final String slide2ImageAutomationId = "Slide257Image";
+    private static final By slide2Image = By.name("Slide two");
 
 
 
@@ -50,7 +49,7 @@ public class PowerpointApp extends BasePage {
     public void addSlide() throws InterruptedException{
         driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "m"));
         driver.getKeyboard().sendKeys(Keys.TAB);
-        driver.getKeyboard().sendKeys("2");
+        driver.getKeyboard().sendKeys("two");
     }
 
 
@@ -83,7 +82,9 @@ public class PowerpointApp extends BasePage {
 
     public boolean isSlide2ThumbImageDisplayed(){
         try {
-            driver.findElementByName("Slide 2").isDisplayed();
+            driver.getKeyboard().sendKeys(Keys.ARROW_DOWN);
+            //driver.findElementByName("Slide two").isDisplayed();
+            Find(slide2Image).isDisplayed();
             return true;
         } catch (NoSuchElementException e) {
             return false;
