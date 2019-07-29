@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class NotepadStepDefs {
 
-    //private WebDriver driver;
+    
     private WebDriverController webDriverController;
     private NotepadApp notepadApp;
     private SaveAsDialog saveAsDialog;
