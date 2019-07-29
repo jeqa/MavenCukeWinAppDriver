@@ -57,6 +57,9 @@ public class Hooks {
             appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
 //            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
         }
+        else if (scenario.getName().contains("Notepad")){
+            appId = "C:\\Windows\\System32\\notepad.exe";
+        }
 
 
         webDriverController.setupController(appId, appArg);
