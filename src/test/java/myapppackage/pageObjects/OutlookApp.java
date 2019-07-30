@@ -49,7 +49,7 @@ public class OutlookApp extends BasePage {
 
         newSession();
 
-        Thread.sleep(4000);
+        Thread.sleep(8000);
         driver.findElementByName(inviteIntendeesButton).click();
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement subjectInput = driver.findElementByAccessibilityId("4100");
@@ -111,7 +111,7 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickCalendar() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(5000);
         ClickWithSplashScreen(calendarButton);
     }
 
