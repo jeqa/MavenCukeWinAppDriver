@@ -33,7 +33,7 @@ public class NotepadStepDefs {
     }
 
     @When("I enter text into the text file")
-    public void i_enter_text_into_the_text_file() {
+    public void i_enter_text_into_the_text_file() throws InterruptedException {
         notepadApp.enterText();
     }
 
@@ -56,13 +56,13 @@ public class NotepadStepDefs {
     }
 
     @Given("I have created and saved a text file")
-    public void i_have_created_and_saved_a_text_file() {
+    public void i_have_created_and_saved_a_text_file() throws InterruptedException {
         i_enter_text_into_the_text_file();
         save_the_text_file();
     }
 
     @When("I update the text file")
-    public void i_update_the_text_file() {
+    public void i_update_the_text_file() throws InterruptedException {
         notepadApp.launchApp();
         notepadApp.openSavedTextFileInNotepad(fileName);
         notepadApp.updateTextinTextFile();

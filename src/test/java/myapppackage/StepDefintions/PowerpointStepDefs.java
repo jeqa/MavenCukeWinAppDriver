@@ -44,12 +44,11 @@ public class PowerpointStepDefs {
         powerpointApp.enterSubTitleText();
     }
 
-    @When("save the Powerpoint file")
-    public void save_the_Powerpoint_file() {
+    @When("I save the Powerpoint file")
+    public void i_save_the_Powerpoint_file() {
         String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
         fileName = "ppfile_" + timestamp;
         saveAsDialog.saveFileWithCtrlPlusS(fileName);
-        powerpointApp.closeApp();
     }
 
     @Then("the entered slide text is retained")
@@ -64,7 +63,7 @@ public class PowerpointStepDefs {
     public void i_have_created_and_saved_a_Powerpoint_file() throws InterruptedException {
         i_have_opened_Powerpoint();
         i_enter_text_into_the_Title_box();
-        save_the_Powerpoint_file();
+        i_save_the_Powerpoint_file();
     }
 
     @When("I update the Powerpoint file")
@@ -93,11 +92,16 @@ public class PowerpointStepDefs {
         powerpointApp.addSlide();
     }
 
-    @Then("the added slide is retained")
-    public void the_added_slide_is_retained() {
+    @When("I close Powerpoint")
+    public void i_close_Powerpoint() {
+        powerpointApp.closeApp();
+    }
+
+    @Then("Powerpoint file can be reopened")
+    public void powerpoint_file_can_be_reopened() {
         powerpointApp.launchApp();
         powerpointApp.openExistingPresentation(fileName + ".pptx");
-        Assert.assertTrue(powerpointApp.isSlide2ThumbImageDisplayed());
+        Assert.assertTrue(powerpointApp.isSlide2ThumbImageDisplayed(fileName));
     }
 
 }
