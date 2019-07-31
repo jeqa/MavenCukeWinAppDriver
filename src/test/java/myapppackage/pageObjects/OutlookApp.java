@@ -34,7 +34,7 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickNewEmail() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         ClickWithSplashScreen(newEmailButton);
     }
 

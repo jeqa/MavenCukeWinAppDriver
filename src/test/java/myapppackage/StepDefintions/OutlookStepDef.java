@@ -31,7 +31,7 @@ public class OutlookStepDef {
 
     @When("I click the New Email button")
     public void iClickTheNewEmailButton() throws InterruptedException, MalformedURLException {
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         outlookApp.clickNewEmail();
     }
 
