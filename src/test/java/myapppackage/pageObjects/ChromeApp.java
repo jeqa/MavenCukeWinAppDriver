@@ -14,18 +14,12 @@ public class ChromeApp extends BasePage {
         return targetUrl;
     }
 
-    public String getHomeUrl() {
-        return homeUrl;
-    }
-
-    private String targetUrl = "http://the-internet.herokuapp.com/";
-    private String homeUrl = "https://www.bbc.com";
-
+    private String targetUrl = "https://www.gov.uk/browse/tax";
 
 //  Locators
     private static final By addressBar = By.name("Address and search bar");
-    private static final By homeTab = By.name("BBC - Homepage - Google Chrome");
-    private static final By targetTab = By.name("The Internet - Google Chrome");
+    private static final By homeTab = By.name("Welcome to GOV.UK - Google Chrome");
+    private static final By targetTab = By.name("Money and tax - GOV.UK - Google Chrome");
 
 
     public ChromeApp(WebDriverController webDriverController){
