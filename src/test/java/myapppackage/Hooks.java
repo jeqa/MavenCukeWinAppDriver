@@ -60,6 +60,9 @@ public class Hooks {
         else if (scenario.getName().contains("Notepad")){
             appId = "C:\\Windows\\System32\\notepad.exe";
         }
+        else if (scenario.getName().contains("Firefox")){
+            appId = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
+        }
 
 
         webDriverController.setupController(appId, appArg);

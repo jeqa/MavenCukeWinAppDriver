@@ -5,7 +5,9 @@ import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
-public class Ie11App extends BasePage {
+import javax.swing.table.TableCellRenderer;
+
+public class FirefoxApp extends BasePage {
 
     private WindowsDriver driver;
     WebDriverController webDriverController;
@@ -19,36 +21,22 @@ public class Ie11App extends BasePage {
     private String targetUrl = "https://www.gov.uk/browse/tax";
 
 //  Locators
-    private static final By addressBar = By.name("Address and search using Bing");
-    private static final By setUpDialogDontUseRadioButton = By.name("Don’t use recommended settings");
-    private static final By setUpDialogOkButton = By.name("OK");
+    private static final By mainWindow = By.name("Welcome to GOV.UK - Mozilla Firefox");
     private static final By homeTab = By.name("Welcome to GOV.UK");
     private static final By targetTab = By.name("Money and tax - GOV.UK");
 
 
-    public Ie11App(WebDriverController webDriverController){
+    public FirefoxApp(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
     }
 
-    public void handleIeSetUpDialog(){
-        try {
-            if (driver.findElement(setUpDialogDontUseRadioButton).isDisplayed()){
-                Click(setUpDialogDontUseRadioButton);
-                Click(setUpDialogOkButton);
-            }
-        } catch (Exception e){
-
-        }
-    }
-
     public void navigateToTargetSite(){
-        navigateToSiteViaAddressBar(addressBar, targetUrl);
-    }
-
-    public String getCurrentUrl(){
-        return getCurrentUrlFromAddressBar(addressBar);
+        Click(mainWindow);
+        driver.getKeyboard().sendKeys(Keys.chord(Keys.ALT, "d"));
+        driver.getKeyboard().sendKeys(targetUrl);
+        driver.getKeyboard().sendKeys(Keys.ENTER);
     }
 
     public boolean isExpectedHomeTabDisplayed(){
