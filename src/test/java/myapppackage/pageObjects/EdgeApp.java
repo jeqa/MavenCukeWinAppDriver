@@ -13,17 +13,14 @@ public class EdgeApp extends BasePage {
         return targetUrl;
     }
 
-    public String getHomeUrl() {
-        return homeUrl;
-    }
 
-    private String targetUrl = "https://www.bbc.com/news";
-    private String homeUrl = "https://www.bbc.co.uk/";
+
+    private String targetUrl = "https://www.gov.uk/browse/tax";
 
 //  Locators
     private static final By addressBar = By.name("Search or enter web address");
-    private static final By homeTab = By.name("BBC - Homepage tab");
-    private static final By targetTab = By.name("Home - BBC News tab");
+    private static final By homeTab = By.name("Welcome to GOV.UK tab");
+    private static final By targetTab = By.name("Money and tax - GOV.UK tab");
 
 
     public EdgeApp(WebDriverController webDriverController){
