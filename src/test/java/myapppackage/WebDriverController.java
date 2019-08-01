@@ -18,7 +18,7 @@ public class WebDriverController {
         this.driver = driver;
     }
 
-    public WindowsDriver setupController(String appIdentifier, String appArgument, Boolean toBeMaximised){
+    public void setupController(String appIdentifier, String appArgument, Boolean toBeMaximised){
         Assert.assertFalse("WARNING: Unable to start session as Application was not determined from Scenario!!!", appIdentifier.isEmpty());
         try{
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -39,7 +39,7 @@ public class WebDriverController {
         } finally {
         }
 
-        return null;
+        //return null;
     }
 
 
