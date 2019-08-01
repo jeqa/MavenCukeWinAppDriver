@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
@@ -45,6 +46,7 @@ public class BasePage {
     private void switchWindows() {
         try {
             Thread.sleep(10000);
+
             for (String winHandle : driver.getWindowHandles()) {
 
                 driver.switchTo().window(winHandle);

@@ -28,7 +28,7 @@ public class WebDriverController {
 
             this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
             Assert.assertNotNull(driver);
-            if (!appIdentifier.contains("chrome") && (!appIdentifier.contains("OUTLOOK"))){
+            if (!appIdentifier.contains("chrome")){
                 this.driver.manage().window().maximize();}
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
             Thread.sleep(5000);

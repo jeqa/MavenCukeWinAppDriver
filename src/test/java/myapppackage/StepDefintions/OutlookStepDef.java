@@ -31,7 +31,7 @@ public class OutlookStepDef {
 
     @When("I click the New Email button")
     public void iClickTheNewEmailButton() throws InterruptedException, MalformedURLException {
-        Thread.sleep(5000);
+        Thread.sleep(8000);
         outlookApp.clickNewEmail();
     }
 
@@ -49,5 +49,21 @@ public class OutlookStepDef {
         outlookApp.deleteEmail();
 
 
+    }
+
+    @When("I click the Calendar button")
+    public void iClickTheCalendarButton() throws InterruptedException {
+        outlookApp.clickCalendar();
+    }
+
+    @And("the user completes the calendar invite")
+    public void theUserCompletesTheCalendarInvite() throws MalformedURLException, InterruptedException {
+
+        outlookApp.composeCalendarEntry("Calendar body text", "Calendar Text", "Glasgow", "testuser1@erslabs.onmicrosoft.com");
+    }
+
+    @And("I click the new appointment button")
+    public void iClickTheNewAppointmentButton() throws MalformedURLException, InterruptedException {
+        outlookApp.clickNewAppointmentButton();
     }
 }
