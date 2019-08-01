@@ -36,12 +36,8 @@ public class WebDriverController {
             Thread.sleep(5000);
         }catch(Exception e){
             e.printStackTrace();
-        } finally {
         }
-
-        //return null;
     }
-
 
     public void teardownController(){
         if (driver != null){
