@@ -25,44 +25,52 @@ public class Hooks {
     public void BeforeTestRun(Scenario scenario){
         String appId = "";
         String appArg = "";
+        boolean maximizeFlag = false;
 
         if (scenario.getName().contains("Word")){
 //            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe";
             appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.exe";
             appArg = "/q";
-        }
-        else if (scenario.getName().contains("Excel")){
+            maximizeFlag = true;
+        } else if (scenario.getName().contains("Excel")){
 //            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.exe";
             appArg = "/e";
+            maximizeFlag = true;
         } else if (scenario.getName().contains("Outlook")){
             appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE";
+            maximizeFlag = true;
         }
         else if (scenario.getName().contains("Powerpoint")){
 //            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
             appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
             appArg = "/s";
+            maximizeFlag = true;
         }
         else if (scenario.getName().contains("Chrome")){
             appId = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
             appArg = "--start-maximized";
+            maximizeFlag = false;
         }
         else if (scenario.getName().contains("IE11")){
             appId = "C:\\Program Files\\internet explorer\\iexplore.exe";
+            maximizeFlag = true;
         }
         else if (scenario.getName().contains("Edge")){
             appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
+            maximizeFlag = true;
         }
         else if (scenario.getName().contains("Acrobat")){
             appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
 //            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
+            maximizeFlag = true;
         }
         else if (scenario.getName().contains("Notepad")){
             appId = "C:\\Windows\\System32\\notepad.exe";
+            maximizeFlag = true;
         }
 
-
-        webDriverController.setupController(appId, appArg);
+        webDriverController.setupController(appId, appArg, maximizeFlag);
     }
 
     @After
