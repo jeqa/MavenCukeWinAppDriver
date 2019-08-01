@@ -19,7 +19,7 @@ public class WebDriverController {
     }
 
     public WindowsDriver setupController(String appIdentifier, String appArgument, Boolean toBeMaximised){
-        Assert.assertFalse("Unable to start session as Application was not determined from Scenario", appIdentifier.isEmpty());
+        Assert.assertFalse("WARNING: Unable to start session as Application was not determined from Scenario!!!", appIdentifier.isEmpty());
         try{
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("app", appIdentifier);
