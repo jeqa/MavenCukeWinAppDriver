@@ -60,6 +60,9 @@ public class Hooks {
         else if (scenario.getName().contains("Notepad")){
             appId = "C:\\Windows\\System32\\notepad.exe";
         }
+        else if (scenario.getName().contains("Calculator")){
+            appId = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
+        }
 
 
         webDriverController.setupController(appId, appArg);
