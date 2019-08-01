@@ -81,11 +81,11 @@ public class Hooks {
 
     @After
     public void AfterTestRun(Scenario scenario){
-//        if (scenario.isFailed()){
-//            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
-//            scenario.embed(screenshot, "image/png");
-//            scenario.write("Scenario Failed on Browser Type: " + value.toUpperCase());
-//        }
+        if (scenario.isFailed()){
+            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.embed(screenshot, "image/png");
+            scenario.write("Scenario Failed on Browser Type: " + value.toUpperCase());
+        }
         webDriverController.teardownController();
     }
 
