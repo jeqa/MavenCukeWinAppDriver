@@ -11,6 +11,24 @@ Feature: CalculatorTest
 
   Scenario: Calculator division
     Given I have opened Calculator
-    When I update by entering text into cell DNine
-    And save the workbook using existing filename
-    Then the updated text is retained in Cell DNine
+    When I select 8
+    And I select Divide
+    And I select 2
+    And I select Equals
+    Then the expected answer is 4
+
+  Scenario: Calculator minus
+    Given I have opened Calculator
+    When I select 9
+    And I select Minus
+    And I select 3
+    And I select Equals
+    Then the expected answer is 6
+
+  Scenario: Calculator multiply
+    Given I have opened Calculator
+    When I select 3
+    And I select Multiply
+    And I select 3
+    And I select Equals
+    Then the expected answer is 9
