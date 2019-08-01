@@ -71,9 +71,11 @@ public class Hooks {
         }
         else if (scenario.getName().contains("Calculator")){
             appId = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
+            maximizeFlag = true;
         }
         else if (scenario.getName().contains("Firefox")){
             appId = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
+            maximizeFlag = true;
         }
 
         webDriverController.setupController(appId, appArg, maximizeFlag);
