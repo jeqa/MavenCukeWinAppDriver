@@ -9,10 +9,6 @@ public class CalculatorApp extends BasePage {
     private WindowsDriver driver;
     WebDriverController webDriverController;
 
-
-
-
-
 //  Locators
     private static final By plusButton = By.name("Plus");
     private static final By divideButton = By.name("Divide by");
