@@ -20,12 +20,17 @@ public class ChromeApp extends BasePage {
     private static final By addressBar = By.name("Address and search bar");
     private static final By homeTab = By.name("Welcome to GOV.UK - Google Chrome");
     private static final By targetTab = By.name("Money and tax - GOV.UK - Google Chrome");
+    private static final By tabClass = By.className("Chrome_WidgetWin_1");
 
 
     public ChromeApp(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
+    }
+
+    public String getTabText(){
+        return Find(tabClass).getText();
     }
 
 
