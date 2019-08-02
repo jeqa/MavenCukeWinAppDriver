@@ -24,6 +24,7 @@ public class Ie11App extends BasePage {
     private static final By setUpDialogOkButton = By.name("OK");
     private static final By homeTab = By.name("Welcome to GOV.UK");
     private static final By targetTab = By.name("Money and tax - GOV.UK");
+    private static final By tabLocator = By.tagName("TabItem");
 
 
     public Ie11App(WebDriverController webDriverController){
@@ -39,8 +40,11 @@ public class Ie11App extends BasePage {
                 Click(setUpDialogOkButton);
             }
         } catch (Exception e){
-
         }
+    }
+
+    public String getTabText(){
+        return Find(tabLocator).getText();
     }
 
     public void navigateToTargetSite(){

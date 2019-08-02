@@ -29,7 +29,8 @@ public class Ie11StepDefs {
 
     @Then("the expected home page is displayed in IE")
     public void the_expected_home_page_is_displayed_in_IE() {
-        Assert.assertTrue(ie11App.isExpectedHomeTabDisplayed());
+        Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + ie11App.getTabText() + "'. See attached screenshot for more information.",
+                ie11App.isExpectedHomeTabDisplayed());
     }
 
     @When("I attempt to navigate to another site in IE")
@@ -39,6 +40,7 @@ public class Ie11StepDefs {
 
     @Then("the expected site is displayed in IE")
     public void the_expected_site_is_displayed_in_IE() {
-        Assert.assertTrue(ie11App.isExpectedTargetTabDisplayed());
+        Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + ie11App.getTabText() + "'. See attached screenshot for more information.",
+                ie11App.isExpectedTargetTabDisplayed());
     }
 }
