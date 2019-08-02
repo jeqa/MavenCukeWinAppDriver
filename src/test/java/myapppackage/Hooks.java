@@ -84,7 +84,6 @@ public class Hooks {
         if (scenario.isFailed()){
             final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot, "image/png");
-            scenario.write("Scenario Failed on Browser Type: " + value.toUpperCase());
         }
         webDriverController.teardownController();
     }
