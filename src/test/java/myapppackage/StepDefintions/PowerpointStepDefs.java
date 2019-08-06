@@ -4,7 +4,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myapppackage.WebDriverController;
-import myapppackage.pageObjects.ExcelApp;
 import myapppackage.pageObjects.PowerpointApp;
 import myapppackage.pageObjects.SaveAsDialog;
 import org.junit.Assert;
@@ -101,7 +100,8 @@ public class PowerpointStepDefs {
     public void powerpoint_file_can_be_reopened() {
         powerpointApp.launchApp();
         powerpointApp.openExistingPresentation(fileName + ".pptx");
-        Assert.assertTrue(powerpointApp.isSlide2ThumbImageDisplayed(fileName));
+        Assert.assertTrue("Failed to open expected PowerPoint file '" + fileName + ".pptx'",
+                powerpointApp.isNamedPresentationDisplayed(fileName));
     }
 
 }
