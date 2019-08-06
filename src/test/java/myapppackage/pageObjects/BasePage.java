@@ -1,7 +1,9 @@
 package myapppackage.pageObjects;
 
 import io.appium.java_client.windows.WindowsDriver;
+import io.appium.java_client.windows.WindowsElement;
 import myapppackage.WebDriverController;
+import org.junit.Test;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,6 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -70,9 +73,73 @@ public class BasePage {
         Find(locator).click();
     }
 
-    public void ClickWithSplashScreen(By locator) {
-        SplashScreenFind(locator).click();
+    public void name() {
+        wait = new DefaultWait<WindowsDriver<WindowsElement>>(_session)
+        {
+            Duration timeout = Duration.ofSeconds(30);,
+            PollingInterval = TimeSpan.FromSeconds(1)
+        };
+        wait.IgnoreExceptionTypes(typeof(InvalidOperationException));
+
+        WindowsElement mainWindow = null;
+
+        wait.Until(driver =>
+                {
+                        driver.SwitchTo().Window(driver.WindowHandles[0]);
+
+        mainWindow = driver.FindElementByAccessibilityId("MainWindow");
+
+        return mainWindow != null;
+        });
     }
+
+    public void ClickTest(By inviteIntendeesButton) {
+    }
+
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(30))
+                .pollingEvery(Duration.ofMillis(500))
+                .ignoring(NoSuchElementException.class);
+
+        WindowsDriver foo = (WindowsDriver) wait.until(new Function<WebDriver, WebElement>() {
+
+                                                           public WindowsElement apply(WebDriver driver) {
+                                                               return (WindowsElement) driver.findElement(By.name(String.valueOf(foo)));
+                                                           }
+                                                       });
+
+
+//    public void ClickTest(By element) throws InterruptedException {
+//        boolean clicked = false;
+//        int attempts = 0;
+//        while (!clicked && attempts < 200) {
+//            try {
+//                this.wait.until(element)).click();
+//                System.out.println("Successfully clicked on the WebElement: " + "<" + element + ">");
+//                clicked = true;
+//            } catch (Exception e) {
+//                System.out.println("Unable to wait and click on WebElement, Exception: " + e.getMessage());
+//                Assert.fail("Unable to wait and click on the WebElement, using locator: " + "<" + element.toString() + ">");
+//            }
+//            attempts++;
+//        }
+//    }
+
+        public void sendKeysTest (By selector, String value){
+            WebElement element = getElement(selector);
+            element.click();
+            clearField(element);
+            try {
+                waitUntilTheElementIsVisible(selector);
+                element.sendKeys(value);
+            } catch (Exception e) {
+                throw new WebDriverException("Error in sending " + value + " to element " + selector.toString());
+            }
+        }
+
+        public void ClickWithSplashScreen (By locator){
+            SplashScreenFind(locator).click();
+        }
 
     protected void ClearAndTypeIntoField(By locator, String inputText) {
         Find(locator).clear();
