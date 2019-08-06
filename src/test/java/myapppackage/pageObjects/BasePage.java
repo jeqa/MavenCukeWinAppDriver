@@ -7,10 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -18,6 +15,8 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import java.util.function.Function;
 
 
 public class BasePage {
@@ -73,40 +72,31 @@ public class BasePage {
         Find(locator).click();
     }
 
-    public void name() {
-        wait = new DefaultWait<WindowsDriver<WindowsElement>>(_session)
-        {
-            Duration timeout = Duration.ofSeconds(30);,
-            PollingInterval = TimeSpan.FromSeconds(1)
-        };
-        wait.IgnoreExceptionTypes(typeof(InvalidOperationException));
 
-        WindowsElement mainWindow = null;
+    public void ClickTest(WindowsElement element) throws InterruptedException {
+        switchWindows();
+        FluentWait(element);
 
-        wait.Until(driver =>
-                {
-                        driver.SwitchTo().Window(driver.WindowHandles[0]);
 
-        mainWindow = driver.FindElementByAccessibilityId("MainWindow");
-
-        return mainWindow != null;
-        });
     }
 
-    public void ClickTest(By inviteIntendeesButton) {
+    private void FluentWait(WindowsElement element) {
+        try {
+            Wait wait = new FluentWait(driver)
+                    .withTimeout(Duration.ofSeconds(20000))
+                    .pollingEvery(Duration.ofSeconds(20000))
+                    .ignoring(StaleElementReferenceException.class)
+                    .ignoring(NoSuchElementException.class);
+
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+
+            if (element.isDisplayed()) {
+                element.click();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
-        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-                .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofMillis(500))
-                .ignoring(NoSuchElementException.class);
-
-        WindowsDriver foo = (WindowsDriver) wait.until(new Function<WebDriver, WebElement>() {
-
-                                                           public WindowsElement apply(WebDriver driver) {
-                                                               return (WindowsElement) driver.findElement(By.name(String.valueOf(foo)));
-                                                           }
-                                                       });
 
 
 //    public void ClickTest(By element) throws InterruptedException {
@@ -125,17 +115,17 @@ public class BasePage {
 //        }
 //    }
 
-        public void sendKeysTest (By selector, String value){
-            WebElement element = getElement(selector);
-            element.click();
-            clearField(element);
-            try {
-                waitUntilTheElementIsVisible(selector);
-                element.sendKeys(value);
-            } catch (Exception e) {
-                throw new WebDriverException("Error in sending " + value + " to element " + selector.toString());
-            }
-        }
+//        public void sendKeysTest (By selector, String value){
+//            WebElement element = getElement(selector);
+//            element.click();
+//            clearField(element);
+//            try {
+//                waitUntilTheElementIsVisible(selector);
+//                element.sendKeys(value);
+//            } catch (Exception e) {
+//                throw new WebDriverException("Error in sending " + value + " to element " + selector.toString());
+//            }
+//        }
 
         public void ClickWithSplashScreen (By locator){
             SplashScreenFind(locator).click();

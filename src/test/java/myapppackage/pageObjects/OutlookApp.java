@@ -2,6 +2,7 @@ package myapppackage.pageObjects;
 
 import gherkin.lexer.Th;
 import io.appium.java_client.windows.WindowsDriver;
+import io.appium.java_client.windows.WindowsElement;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -18,12 +19,12 @@ public class OutlookApp extends BasePage {
     private static final By newEmailButton = By.name("New Email");
     private static final By calendarButton = By.name("Calendar");
     private static final By newAppointmentButton = By.name("New Appointment");
-    private static final String inviteIntendeesButton = ("Invite Attendees");
     private static final String sendButton = ("Send");
     private static final String sendAnywayButton = ("Send Anyway");
 
 
-    private WindowsDriver driver;
+    private WindowsDriver<WindowsElement> driver;
+//    private final WindowsElement inviteIntendeesButton =  driver.findElementByName ("Invite Attendees");
     WebDriverController webDriverController;
 
 
@@ -50,7 +51,8 @@ public class OutlookApp extends BasePage {
         newSession();
 
         Thread.sleep(8000);
-        driver.findElementByName(inviteIntendeesButton).click();
+        ClickTest(driver.findElementByName("Invite Attendees"));
+//        driver.findElementByName(inviteIntendeesButton).click();
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement subjectInput = driver.findElementByAccessibilityId("4100");
         WebElement locationInput = driver.findElementByAccessibilityId("4102");
