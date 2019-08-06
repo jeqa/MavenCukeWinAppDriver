@@ -3,15 +3,14 @@ package myapppackage.pageObjects;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 public class ExcelApp extends BasePage {
 
     private WindowsDriver driver;
     WebDriverController webDriverController;
 
-    private String b4InitialText = "Initial Text in B4";
-    private String d9UpdateText = "Update Text in D9";
+    private String initialText = "Initial Text in B4";
+    private String updateText = "Update Text in D9";
 
 //  Locators
     private static final By fileMenuTab = By.name("File Tab");
@@ -59,12 +58,12 @@ public class ExcelApp extends BasePage {
         return Find(By.name(cell)).getText();
     }
 
-    public String getB4InitialText(){
-        return b4InitialText;
+    public String getInitialText(){
+        return initialText;
     }
 
-    public String getD9UpdateText(){
-        return d9UpdateText;
+    public String getUpdateText(){
+        return updateText;
     }
 
 

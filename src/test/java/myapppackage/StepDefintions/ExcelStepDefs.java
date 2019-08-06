@@ -6,7 +6,6 @@ import cucumber.api.java.en.When;
 import myapppackage.WebDriverController;
 import myapppackage.pageObjects.ExcelApp;
 import myapppackage.pageObjects.SaveAsDialog;
-import myapppackage.pageObjects.WordApp;
 import org.junit.Assert;
 
 import java.text.SimpleDateFormat;
@@ -34,24 +33,25 @@ public class ExcelStepDefs {
     }
 
     @When("I enter text into cell BFour")
-    public void i_enter_text_into_cell_BFour() throws InterruptedException {
-        excelApp.enterTextInCell("B4", excelApp.getB4InitialText());
+    public void i_enter_text_into_cell_BFour(String cell) throws InterruptedException {
+        //excelApp.enterTextInCell("B4", excelApp.getInitialText());
+        excelApp.enterTextInCell(cell, excelApp.getInitialText());
     }
 
     @Then("the entered text is retained in cell BFour")
     public void the_entered_text_is_retained_in_cell_BFour() {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        String expectedText = excelApp.getB4InitialText();
+        String expectedText = excelApp.getInitialText();
         String actualText = excelApp.getTextFromCell("B4");
         Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
                 expectedText.equalsIgnoreCase(actualText));
     }
 
     @Given("I have created and saved a Excel Document")
-    public void i_have_created_and_saved_a_Excel_Document() throws InterruptedException {
+    public void i_have_created_and_saved_a_Excel_Document(String cell) throws InterruptedException {
         i_have_opened_a_blank_workbook();
-        i_enter_text_into_cell_BFour();
+        i_enter_text_into_cell_BFour(cell);
         save_the_workbook();
     }
 
@@ -59,14 +59,14 @@ public class ExcelStepDefs {
     public void i_update_by_entering_text_into_cell_DNine() throws InterruptedException {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        excelApp.enterTextInCell("D9", excelApp.getD9UpdateText());
+        excelApp.enterTextInCell("D9", excelApp.getUpdateText());
     }
 
     @Then("the updated text is retained in Cell DNine")
     public void the_updated_text_is_retained_in_Cell_DNine() {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        String expectedText = excelApp.getD9UpdateText();
+        String expectedText = excelApp.getUpdateText();
         String actualText = excelApp.getTextFromCell("D9");
         Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
                 expectedText.equalsIgnoreCase(actualText));
