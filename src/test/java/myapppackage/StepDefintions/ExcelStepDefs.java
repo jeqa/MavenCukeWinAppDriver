@@ -42,7 +42,10 @@ public class ExcelStepDefs {
     public void the_entered_text_is_retained_in_cell_BFour() {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        Assert.assertTrue(excelApp.getTextFromCell("B4").equalsIgnoreCase(excelApp.getB4InitialText()));
+        String expectedText = excelApp.getB4InitialText();
+        String actualText = excelApp.getTextFromCell("B4");
+        Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
+                expectedText.equalsIgnoreCase(actualText));
     }
 
     @Given("I have created and saved a Excel Document")
@@ -63,7 +66,10 @@ public class ExcelStepDefs {
     public void the_updated_text_is_retained_in_Cell_DNine() {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        Assert.assertTrue(excelApp.getTextFromCell("D9").equalsIgnoreCase(excelApp.getD9UpdateText()));
+        String expectedText = excelApp.getD9UpdateText();
+        String actualText = excelApp.getTextFromCell("D9");
+        Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
+                expectedText.equalsIgnoreCase(actualText));
     }
 
     @When("save the workbook")

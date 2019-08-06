@@ -80,7 +80,7 @@ public class PowerpointApp extends BasePage {
         return subTitleText;
     }
 
-    public boolean isSlide2ThumbImageDisplayed(String filename){
+    public boolean isNamedPresentationDisplayed(String filename){
         try {
             driver.findElementByName(filename + ".pptx - PowerPoint");
             return true;

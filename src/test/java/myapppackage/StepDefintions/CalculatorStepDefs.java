@@ -59,7 +59,8 @@ public class CalculatorStepDefs {
     @Then("the expected answer is {int}")
     public void the_expected_answer_is(Integer number) {
         String actualResult = calculatorApp.getResult();
-        Assert.assertTrue("", actualResult.equalsIgnoreCase(number.toString()));
+        Assert.assertTrue("Expected answer to be '" + number.toString() + "'; however, actual result was '" + actualResult + "'!",
+                actualResult.equalsIgnoreCase(number.toString()));
     }
 
 }

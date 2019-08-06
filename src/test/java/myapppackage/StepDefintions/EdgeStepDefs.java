@@ -28,7 +28,8 @@ public class EdgeStepDefs {
 
     @Then("the expected home page is displayed in Edge")
     public void the_expected_home_page_is_displayed_in_Edge() {
-        Assert.assertTrue(edgeApp.isExpectedHomeTabDisplayed());
+        Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + edgeApp.getTabText() + "'. See attached screenshot for more information.",
+                edgeApp.isExpectedHomeTabDisplayed());
     }
 
     @When("I attempt to navigate to another site in Edge")
@@ -38,6 +39,7 @@ public class EdgeStepDefs {
 
     @Then("the expected site is displayed in Edge")
     public void the_expected_site_is_displayed_in_Edge() {
-        Assert.assertTrue(edgeApp.isExpectedTargetTabDisplayed());
+        Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + edgeApp.getTabText() + "'. See attached screenshot for more information.",
+                edgeApp.isExpectedTargetTabDisplayed());
     }
 }

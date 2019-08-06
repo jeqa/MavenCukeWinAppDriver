@@ -24,12 +24,17 @@ public class FirefoxApp extends BasePage {
     private static final By mainWindow = By.name("Welcome to GOV.UK - Mozilla Firefox");
     private static final By homeTab = By.name("Welcome to GOV.UK");
     private static final By targetTab = By.name("Money and tax - GOV.UK");
+    private static final By tabLocator = By.tagName("TabItem");
 
 
     public FirefoxApp(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
+    }
+
+    public String getTabText(){
+        return Find(tabLocator).getText();
     }
 
     public void navigateToTargetSite(){

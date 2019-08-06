@@ -28,7 +28,8 @@ public class FirefoxStepDefs {
 
     @Then("the expected home page is displayed in Firefox")
     public void the_expected_home_page_is_displayed_in_Edge() {
-        Assert.assertTrue(firefoxApp.isExpectedHomeTabDisplayed());
+        Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + firefoxApp.getTabText() + "'. See attached screenshot for more information.",
+                firefoxApp.isExpectedHomeTabDisplayed());
     }
 
     @When("I attempt to navigate to another site in Firefox")
@@ -38,6 +39,7 @@ public class FirefoxStepDefs {
 
     @Then("the expected site is displayed in Firefox")
     public void the_expected_site_is_displayed_in_Firefox() {
-        Assert.assertTrue(firefoxApp.isExpectedTargetTabDisplayed());
+        Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + firefoxApp.getTabText() + "'. See attached screenshot for more information.",
+                firefoxApp.isExpectedTargetTabDisplayed());
     }
 }

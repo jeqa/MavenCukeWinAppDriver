@@ -21,12 +21,17 @@ public class EdgeApp extends BasePage {
     private static final By addressBar = By.name("Search or enter web address");
     private static final By homeTab = By.name("Welcome to GOV.UK tab");
     private static final By targetTab = By.name("Money and tax - GOV.UK tab");
+    private static final By tabLocator = By.tagName("ListItem");
 
 
     public EdgeApp(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
+    }
+
+    public String getTabText(){
+        return Find(tabLocator).getText();
     }
 
     public void navigateToTargetSite(){

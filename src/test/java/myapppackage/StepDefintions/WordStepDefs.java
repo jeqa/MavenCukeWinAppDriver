@@ -49,7 +49,10 @@ public class WordStepDefs {
     public void the_entered_text_is_retained() {
         wordApp.reopenWord();
         wordApp.openExistingDocument(fileName + ".docx");
-        Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(wordApp.getInitialText()));
+        String expectedText = wordApp.getInitialText();
+        String actualText = wordApp.getDocumentText();
+        Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
+                expectedText.equalsIgnoreCase(actualText));
     }
 
     @Given("I have created and saved a Word Document")
@@ -77,7 +80,9 @@ public class WordStepDefs {
         wordApp.reopenWord();
         wordApp.openExistingDocument(fileName + ".docx");
         String allText = wordApp.getInitialText() + " " + wordApp.getUpdateText();
-        Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(allText));
+        String actualText = wordApp.getDocumentText();
+        Assert.assertTrue("Expected text to be '" + allText + "'; however, actual text is '" + actualText +"'!",
+                actualText.equalsIgnoreCase(allText));
     }
 
 
