@@ -8,8 +8,11 @@ import myapppackage.pageObjects.ExcelApp;
 import myapppackage.pageObjects.SaveAsDialog;
 import org.junit.Assert;
 
+import java.sql.SQLOutput;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 
 public class ExcelStepDefs {
@@ -32,26 +35,32 @@ public class ExcelStepDefs {
         excelApp.selectBlankDocument();
     }
 
-    @When("I enter text into cell BFour")
-    public void i_enter_text_into_cell_BFour(String cell) throws InterruptedException {
-        //excelApp.enterTextInCell("B4", excelApp.getInitialText());
+//    @When("I enter text into cell BFour")
+//    public void i_enter_text_into_cell_BFour(String cell) throws InterruptedException {
+//        //excelApp.enterTextInCell("B4", excelApp.getInitialText());
+//        excelApp.enterTextInCell(cell, excelApp.getInitialText());
+//    }
+
+    @When("I enter text into a cell")
+    public void i_enter_text_into_a_cell(List<String> list) throws InterruptedException {
+        String cell = list.get(0);
         excelApp.enterTextInCell(cell, excelApp.getInitialText());
     }
 
-    @Then("the entered text is retained in cell BFour")
-    public void the_entered_text_is_retained_in_cell_BFour() {
+    @Then("the entered text is retained in the expected cell")
+    public void the_entered_text_is_retained_in_the_expected_cell() {
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        String expectedText = excelApp.getInitialText();
-        String actualText = excelApp.getTextFromCell("B4");
+        String expectedText = excelApp.getInitialText() + excelApp.getCellContainingText();
+        String actualText = excelApp.getTextFromCell(excelApp.getCellContainingText());
         Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
                 expectedText.equalsIgnoreCase(actualText));
     }
 
     @Given("I have created and saved a Excel Document")
-    public void i_have_created_and_saved_a_Excel_Document(String cell) throws InterruptedException {
+    public void i_have_created_and_saved_a_Excel_Document(List<String> list) throws InterruptedException {
         i_have_opened_a_blank_workbook();
-        i_enter_text_into_cell_BFour(cell);
+        i_enter_text_into_a_cell(list);
         save_the_workbook();
     }
 
@@ -62,12 +71,20 @@ public class ExcelStepDefs {
         excelApp.enterTextInCell("D9", excelApp.getUpdateText());
     }
 
-    @Then("the updated text is retained in Cell DNine")
-    public void the_updated_text_is_retained_in_Cell_DNine() {
+    @When("I update by entering text into another cell")
+    public void i_update_by_entering_text_into_another_cell(List<String> list) throws InterruptedException {
+        String cell = list.get(0);
         excelApp.reopenExcel();
         excelApp.openExistingWorkbook(fileName + ".xlsx");
-        String expectedText = excelApp.getUpdateText();
-        String actualText = excelApp.getTextFromCell("D9");
+        excelApp.enterTextInCell(cell, excelApp.getUpdateText());
+    }
+
+    @Then("the updated text is retained in the expected cell")
+    public void the_updated_text_is_retained_in_the_expected_cell() {
+        excelApp.reopenExcel();
+        excelApp.openExistingWorkbook(fileName + ".xlsx");
+        String expectedText = excelApp.getUpdateText() + excelApp.getCellContainingText();
+        String actualText = excelApp.getTextFromCell(excelApp.getCellContainingText());
         Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
                 expectedText.equalsIgnoreCase(actualText));
     }
