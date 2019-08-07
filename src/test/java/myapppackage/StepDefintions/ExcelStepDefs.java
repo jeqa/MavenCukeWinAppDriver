@@ -35,12 +35,6 @@ public class ExcelStepDefs {
         excelApp.selectBlankDocument();
     }
 
-//    @When("I enter text into cell BFour")
-//    public void i_enter_text_into_cell_BFour(String cell) throws InterruptedException {
-//        //excelApp.enterTextInCell("B4", excelApp.getInitialText());
-//        excelApp.enterTextInCell(cell, excelApp.getInitialText());
-//    }
-
     @When("I enter text into a cell")
     public void i_enter_text_into_a_cell(List<String> list) throws InterruptedException {
         String cell = list.get(0);
