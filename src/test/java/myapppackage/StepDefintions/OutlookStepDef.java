@@ -45,7 +45,7 @@ public class OutlookStepDef {
     public void theUserCanSendTheEMailTheRecipient() throws InterruptedException {
         outlookApp.pressSend();
         Thread.sleep(2000);
-        Assert.assertTrue(outlookApp.asserNewEmail().equalsIgnoreCase("Demo text"));
+        Assert.assertTrue(outlookApp.assertNewEmail().equalsIgnoreCase("Demo text"));
         outlookApp.deleteEmail();
 
 

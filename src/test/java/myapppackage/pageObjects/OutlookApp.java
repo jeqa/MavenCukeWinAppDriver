@@ -101,10 +101,8 @@ public class OutlookApp extends BasePage {
 
     }
 
-    public String asserNewEmail() {
-        String getEMailBody = driver.findElementByName("Page 1 content").getText().replace("\r", "");
-        return getEMailBody;
-
+    public String assertNewEmail() {
+        return Find(By.name("Page 1 content")).getText().replace("\r", "");
     }
 
     public void deleteEmail() {
