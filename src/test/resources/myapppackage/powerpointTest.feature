@@ -12,7 +12,7 @@ Feature: PowerPointTest
 #    Given I have opened Powerpoint
 #    When I enter text into the Title box
 #    And I enter text into the subtitle box
-#    And save the Powerpoint file
+#    And I save the Powerpoint file
 #    Then the entered slide text is retained
 #  @ignore
 #  Scenario: Update and Save Powerpoint file

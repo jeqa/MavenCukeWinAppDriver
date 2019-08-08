@@ -28,7 +28,7 @@ public class BasePage {
     public BasePage(WebDriverController webDriverController) {
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
-        this.wait = new WebDriverWait(driver, 15);
+         this.wait = new WebDriverWait(driver, 15);
     }
 
 
