@@ -7,6 +7,8 @@ import myapppackage.WebDriverController;
 import myapppackage.pageObjects.AcrobatReaderApp;
 import org.junit.Assert;
 
+import java.net.MalformedURLException;
+
 
 public class AcrobatReaderStepDefs {
 
@@ -21,8 +23,8 @@ public class AcrobatReaderStepDefs {
     }
 
     @Given("that Acrobat Reader has opened")
-    public void that_Acrobat_Reader_has_opened() {
-
+    public void that_Acrobat_Reader_has_opened() throws MalformedURLException {
+        acrobatReaderApp.findAcrobatSession();
     }
 
     @Then("the Sign In dialog is displayed")
