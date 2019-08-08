@@ -1,9 +1,7 @@
 package myapppackage.pageObjects;
 
 import io.appium.java_client.windows.WindowsDriver;
-import io.appium.java_client.windows.WindowsElement;
 import myapppackage.WebDriverController;
-import org.junit.Test;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -13,10 +11,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import java.time.Duration;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.function.Function;
 
 
 public class BasePage {
@@ -35,7 +29,7 @@ public class BasePage {
 
 
     public WebElement Find(By locator) {
-        driver.getWindowHandles().contains("");
+//        driver.getWindowHandles().contains("");
 
         return driver.findElement(locator);
     }
@@ -73,25 +67,24 @@ public class BasePage {
     }
 
 
-    public void ClickTest(WindowsElement element) throws InterruptedException {
-        switchWindows();
+    public void ClickTest(By element) {
         FluentWait(element);
-
 
     }
 
-    private void FluentWait(WindowsElement element) {
+    public void FluentWait(By element) {
         try {
+
             Wait wait = new FluentWait(driver)
-                    .withTimeout(Duration.ofSeconds(20000))
-                    .pollingEvery(Duration.ofSeconds(20000))
+                    .withTimeout(Duration.ofSeconds(7000))
+                    .pollingEvery(Duration.ofSeconds(5000))
                     .ignoring(StaleElementReferenceException.class)
                     .ignoring(NoSuchElementException.class);
 
             wait.until(ExpectedConditions.elementToBeClickable(element));
 
-            if (element.isDisplayed()) {
-                element.click();
+            if (Find(element).isDisplayed()) {
+                Find(element).click();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,33 +92,7 @@ public class BasePage {
     }
 
 
-//    public void ClickTest(By element) throws InterruptedException {
-//        boolean clicked = false;
-//        int attempts = 0;
-//        while (!clicked && attempts < 200) {
-//            try {
-//                this.wait.until(element)).click();
-//                System.out.println("Successfully clicked on the WebElement: " + "<" + element + ">");
-//                clicked = true;
-//            } catch (Exception e) {
-//                System.out.println("Unable to wait and click on WebElement, Exception: " + e.getMessage());
-//                Assert.fail("Unable to wait and click on the WebElement, using locator: " + "<" + element.toString() + ">");
-//            }
-//            attempts++;
-//        }
-//    }
 
-//        public void sendKeysTest (By selector, String value){
-//            WebElement element = getElement(selector);
-//            element.click();
-//            clearField(element);
-//            try {
-//                waitUntilTheElementIsVisible(selector);
-//                element.sendKeys(value);
-//            } catch (Exception e) {
-//                throw new WebDriverException("Error in sending " + value + " to element " + selector.toString());
-//            }
-//        }
 
         public void ClickWithSplashScreen (By locator){
             SplashScreenFind(locator).click();
@@ -202,69 +169,6 @@ public class BasePage {
     }
 
 
-    public void waitUntilTheFrameIsVisibleAndSwitch(WebElement element) throws Exception {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
-            setCurrentFrame(element);
-        } catch (Exception e) {
-            throw new Exception("Unable to find the frame" + e.getMessage());
-        }
-    }
-
-
-    public void waitUntilTheElementIsPresent(String xpath) {
-        WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
-    }
-
-    public void waitUntilTheElementIsVisible1(String type, String Value) throws Exception {
-        if (type.equalsIgnoreCase("id")) {
-            WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Value)));
-        } else if (type.equalsIgnoreCase("xpath")) {
-            WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Value)));
-        } else {
-            throw new Exception("Unable to find element type");
-        }
-
-
-    }
-
-    public void waitUntilTheElementIsVisible(WebElement element) throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-        try {
-            wait.until(ExpectedConditions.visibilityOf(element));
-        } catch (Exception e) {
-            if (e.getMessage().contains("Cannot find context with specified id")) {
-                Thread.sleep(3000);
-                wait.until(ExpectedConditions.visibilityOf(element));
-            }
-        }
-    }
-
-    public void waitUntilAsyncWebElementIsVisible(String xpath) {
-        org.openqa.selenium.support.ui.Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
-                .pollingEvery(5, TimeUnit.SECONDS).ignoring(WebDriverException.class);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-    }
-
-    public void waitForPageLoaded() {
-        ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
-                .equals("complete");
-        try {
-            Thread.sleep(1000);
-            WebDriverWait wait = new WebDriverWait(driver, 30);
-            wait.until(expectation);
-        } catch (Throwable error) {
-            // throw new Exception("Timeout waiting for Page Load Request to complete.");
-        }
-    }
-
-    public void setCurrentFrame(WebElement currentFrame) {
-        CurrentFrame = currentFrame;
-    }
 
     public boolean isElementDisplayed(By locator){
         try {
