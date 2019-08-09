@@ -47,6 +47,9 @@ public class AcrobatReaderApp extends BasePage {
     public Boolean isSignInRequiredTextDisplayed(){
         boolean thereOrNot = driver.findElement(signInRequiredText).isDisplayed();
         driver.closeApp();
+        if (driver.findElement(By.name("Quit")).isDisplayed()) {
+            driver.findElement(By.name("Yes")).click();
+        }
         return thereOrNot;
         }
 }

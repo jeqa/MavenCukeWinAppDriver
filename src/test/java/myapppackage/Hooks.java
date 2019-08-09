@@ -63,7 +63,7 @@ public class Hooks {
         else if (scenario.getName().contains("Acrobat")){
 //            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
             appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
-            maximizeFlag = true;
+            maximizeFlag = false;
         }
         else if (scenario.getName().contains("Notepad")){
             appId = "C:\\Windows\\System32\\notepad.exe";
