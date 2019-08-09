@@ -83,9 +83,13 @@ public class Hooks {
 
     @After
     public void AfterTestRun(Scenario scenario){
-        if (scenario.isFailed()){
-            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
+        try {
+            if (scenario.isFailed()){
+                final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
+                scenario.embed(screenshot, "image/png");
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
         webDriverController.teardownController();
     }
