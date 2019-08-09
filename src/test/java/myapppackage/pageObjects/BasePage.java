@@ -81,7 +81,9 @@ public class BasePage {
                     .ignoring(StaleElementReferenceException.class)
                     .ignoring(NoSuchElementException.class);
 
-            wait.until(ExpectedConditions.elementToBeClickable(element));
+            driver.findElement(element).click();
+
+            wait.until(ExpectedConditions.elementToBeClickable(Find(element)));
 
             if (Find(element).isDisplayed()) {
                 Find(element).click();

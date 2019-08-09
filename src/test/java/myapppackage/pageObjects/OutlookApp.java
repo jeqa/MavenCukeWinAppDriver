@@ -25,7 +25,7 @@ public class OutlookApp extends BasePage {
     private static final By toInput = By.name("To");
 
 
-    private WindowsDriver<WindowsElement> driver;
+    private WindowsDriver driver;
 
     WebDriverController webDriverController;
 
@@ -50,6 +50,8 @@ public class OutlookApp extends BasePage {
     public void composeCalendarEntry(String bodyText, String subjectText, String locationText, String toText) throws InterruptedException, MalformedURLException {
 
         newSession();
+
+//        driver.findElement(By.name("Invite Attendees")).click();
         ClickTest(inviteAttendees);
 //        WebElement inviteAttendees = driver.findElementByName("Invite Attendees");
 //        Actions performAct2 = new Actions(driver);
