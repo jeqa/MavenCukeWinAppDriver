@@ -61,8 +61,8 @@ public class Hooks {
             maximizeFlag = true;
         }
         else if (scenario.getName().contains("Acrobat")){
-            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
-//            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
+//            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
+            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
             maximizeFlag = true;
         }
         else if (scenario.getName().contains("Notepad")){
@@ -83,9 +83,13 @@ public class Hooks {
 
     @After
     public void AfterTestRun(Scenario scenario){
-        if (scenario.isFailed()){
-            final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
+        try {
+            if (scenario.isFailed()){
+                final byte[] screenshot = ((TakesScreenshot) webDriverController.getDriver()).getScreenshotAs(OutputType.BYTES);
+                scenario.embed(screenshot, "image/png");
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
         }
         webDriverController.teardownController();
     }
