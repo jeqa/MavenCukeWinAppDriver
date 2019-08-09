@@ -14,41 +14,36 @@ import java.net.URL;
 public class AcrobatReaderApp extends BasePage {
 
     private WindowsDriver driver;
-    private WindowsDriver desktopSession;
     WebDriverController webDriverController;
 
-
-
 //  Locators
+    private static final By mainWindow = By.name("Adobe Acrobat");
     private static final By signInRequiredText = By.name("Sign In Required");
+    private static final By quitDialog = By.name("Quit");
+    private static final By quitDialogYesButton = By.name("Yes");
 
 
     public AcrobatReaderApp(WebDriverController webDriverController){
         super(webDriverController);
         this.webDriverController = webDriverController;
         driver = webDriverController.getDriver();
-        desktopSession = webDriverController.getDesktopSession();
     }
 
-    public void findAcrobatSession() throws MalformedURLException {
-
-        Integer intTopLevelWindowHandle = Integer.parseInt(desktopSession.findElementByName("Adobe Acrobat").getAttribute("NativeWindowHandle"));
+    public void createAcrobatSession() throws MalformedURLException {
+        int intTopLevelWindowHandle = Integer.parseInt(Find(mainWindow).getAttribute("NativeWindowHandle"));
         String hexTopLevelWindowHandle = Integer.toHexString(intTopLevelWindowHandle);
         hexTopLevelWindowHandle = "0x" + hexTopLevelWindowHandle.toUpperCase();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("appTopLevelWindow", hexTopLevelWindowHandle);
         driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
         Assert.assertNotNull(driver);
-
-        //return desktopSession.findElementByName("Adobe Acrobat").isDisplayed();
     }
 
-
     public Boolean isSignInRequiredTextDisplayed(){
-        boolean thereOrNot = driver.findElement(signInRequiredText).isDisplayed();
+        boolean thereOrNot = Find(signInRequiredText).isDisplayed();
         driver.closeApp();
-        if (driver.findElement(By.name("Quit")).isDisplayed()) {
-            driver.findElement(By.name("Yes")).click();
+        if (Find(quitDialog).isDisplayed()) {
+            Click(quitDialogYesButton);
         }
         return thereOrNot;
         }
