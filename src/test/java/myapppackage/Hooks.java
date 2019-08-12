@@ -77,6 +77,10 @@ public class Hooks {
             appId = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
             maximizeFlag = true;
         }
+        else if (scenario.getName().contains("Teams")){
+            appId = "C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Corporation\\Microsoft Teams";
+            maximizeFlag = false;
+        }
 
         webDriverController.setupController(appId, appArg, maximizeFlag);
     }

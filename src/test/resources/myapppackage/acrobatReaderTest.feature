@@ -1,5 +1,4 @@
-@ignore
-#  Requires further work due to delay of Acrobat opening
+@acrobat
 
 Feature: AcrobatReaderTest
 
