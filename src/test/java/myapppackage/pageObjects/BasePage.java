@@ -133,6 +133,25 @@ public class BasePage {
         SplashScreenFind(locator).sendKeys(inputText);
     }
 
+    public WindowsDriver getSessionFromRoot(By locatorInTopLevelWindow) throws MalformedURLException {
+        WindowsDriver rootSession;
+        if (!driver.getCapabilities().getCapability("app").toString().equals("Root")){
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("app", "Root");
+            rootSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+        } else {
+            rootSession = driver;
+        }
+        assert rootSession != null;
+        int intTopLevelWindowHandle = Integer.parseInt(rootSession.findElement(locatorInTopLevelWindow).getAttribute("NativeWindowHandle"));
+        String hexTopLevelWindowHandle = Integer.toHexString(intTopLevelWindowHandle);
+        hexTopLevelWindowHandle = "0x" + hexTopLevelWindowHandle.toUpperCase();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("appTopLevelWindow", hexTopLevelWindowHandle);
+        WindowsDriver newSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+        return new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+    }
+
     public void closeApp() {
         driver.closeApp();
     }

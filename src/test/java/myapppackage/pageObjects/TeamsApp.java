@@ -24,12 +24,7 @@ public class TeamsApp extends BasePage {
     }
 
     public void createTeamsSession() throws MalformedURLException {
-        int intTopLevelWindowHandle = Integer.parseInt(Find(mainSignInWindow).getAttribute("NativeWindowHandle"));
-        String hexTopLevelWindowHandle = Integer.toHexString(intTopLevelWindowHandle);
-        hexTopLevelWindowHandle = "0x" + hexTopLevelWindowHandle.toUpperCase();
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("appTopLevelWindow", hexTopLevelWindowHandle);
-        driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+        driver = getSessionFromRoot(mainSignInWindow);
         webDriverController.setDriver(driver);
         Assert.assertNotNull(driver);
     }
