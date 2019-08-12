@@ -12,12 +12,10 @@ import java.net.URL;
 public class TeamsApp extends BasePage {
 
     private WindowsDriver driver;
-    private WindowsDriver loadingWindowSession;
     WebDriverController webDriverController;
 
 //  Locators
     private static final By mainSignInWindow = By.name("Microsoft Teams");
-    private static final By loadingTeamsWindow = By.name("Loading Microsoft Teams");
 
     public TeamsApp(WebDriverController webDriverController){
         super(webDriverController);
