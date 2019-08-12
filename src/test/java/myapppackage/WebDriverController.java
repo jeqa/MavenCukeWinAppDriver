@@ -5,7 +5,6 @@ import org.junit.Assert;
 import io.appium.java_client.windows.WindowsDriver;
 import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 import java.net.URL;
