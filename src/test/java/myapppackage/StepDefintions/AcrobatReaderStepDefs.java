@@ -5,7 +5,6 @@ import cucumber.api.java.en.Then;
 import myapppackage.WebDriverController;
 import myapppackage.pageObjects.AcrobatReaderApp;
 import org.junit.Assert;
-
 import java.net.MalformedURLException;
 
 
