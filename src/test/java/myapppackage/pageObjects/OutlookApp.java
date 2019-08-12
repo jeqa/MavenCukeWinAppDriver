@@ -1,6 +1,5 @@
 package myapppackage.pageObjects;
 
-import gherkin.lexer.Th;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
@@ -17,13 +16,15 @@ public class OutlookApp extends BasePage {
 
     private static final By newEmailButton = By.name("New Email");
     private static final By calendarButton = By.name("Calendar");
-    private static final By newAppointmentButton = By.name("New Appointment");
-    private static final String inviteIntendeesButton = ("Invite Attendees");
-    private static final String sendButton = ("Send");
-    private static final String sendAnywayButton = ("Send Anyway");
+    private static final By newAppointmentButton = By.name ("New Appointment");
+    private static final By sendButton = By.name ("Send");
+    private static final By sendAnywayButton = By.name("Send Anyway");
+    private static final By inviteAttendees = By.name("Invite Attendees");
+    private static final By toInput = By.name("To");
 
 
     private WindowsDriver driver;
+
     WebDriverController webDriverController;
 
 
@@ -39,8 +40,7 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickNewAppointmentButton() throws InterruptedException {
-        Thread.sleep(2000);
-        Click(newAppointmentButton);
+        ClickWithWait(newAppointmentButton);
 
 
     }
@@ -49,8 +49,9 @@ public class OutlookApp extends BasePage {
 
         newSession();
 
-        Thread.sleep(8000);
-        driver.findElementByName(inviteIntendeesButton).click();
+        switchWindows();
+        ClickWithWait(inviteAttendees);
+
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement subjectInput = driver.findElementByAccessibilityId("4100");
         WebElement locationInput = driver.findElementByAccessibilityId("4102");
@@ -62,8 +63,8 @@ public class OutlookApp extends BasePage {
         performAct.sendKeys(locationInput, locationText).build().perform();
         performAct.sendKeys(calendarBodyInput, bodyText).build().perform();
 
-        driver.findElementByName(sendButton).click();
-        driver.findElementByName(sendAnywayButton).click();
+        ClickWithWait(sendButton);
+        ClickWithWait(sendAnywayButton);
 
 
     }
@@ -73,7 +74,7 @@ public class OutlookApp extends BasePage {
 
         newSession();
 
-        Thread.sleep(2000);
+        FluentWait(toInput);
 
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement mailContent = driver.findElementByName("Page 1 content");
@@ -99,10 +100,9 @@ public class OutlookApp extends BasePage {
 
     }
 
-    public String asserNewEmail() {
-        String getEMailBody = driver.findElementByName("Page 1 content").getText().replace("\r", "");
-        return getEMailBody;
-
+    public String assertNewEmail() throws InterruptedException {
+        Thread.sleep(5000);
+        return Find(By.name("Page 1 content")).getText().replace("\r", "");
     }
 
     public void deleteEmail() {

@@ -5,16 +5,13 @@ import myapppackage.WebDriverController;
 import org.openqa.selenium.*;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import java.time.Duration;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 
 public class BasePage {
@@ -32,7 +29,7 @@ public class BasePage {
 
 
     public WebElement Find(By locator) {
-        driver.getWindowHandles().contains("");
+        switchWindows();
 
         return driver.findElement(locator);
     }
@@ -42,13 +39,14 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
-    private void switchWindows() {
+    public void switchWindows() {
         try {
             Thread.sleep(10000);
 
             for (String winHandle : driver.getWindowHandles()) {
 
                 driver.switchTo().window(winHandle);
+                break;
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -68,6 +66,34 @@ public class BasePage {
     public void Click(By locator) {
         Find(locator).click();
     }
+
+
+    public void ClickWithWait(By element) {
+        switchWindows();
+        FluentWait(element);
+
+    }
+
+    public void FluentWait(By element) {
+        try {
+
+
+            Wait wait = new FluentWait(driver)
+                    .withTimeout(Duration.ofSeconds(7000))
+                    .pollingEvery(Duration.ofSeconds(5000))
+                    .ignoring(StaleElementReferenceException.class)
+                    .ignoring(NoSuchElementException.class);
+
+            wait.until(ExpectedConditions.elementToBeClickable(Find(element)));
+
+            if (Find(element).isDisplayed()) {
+                Find(element).click();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void ClickWithSplashScreen(By locator) {
         SplashScreenFind(locator).click();
@@ -144,71 +170,7 @@ public class BasePage {
     }
 
 
-    public void waitUntilTheFrameIsVisibleAndSwitch(WebElement element) throws Exception {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
-            setCurrentFrame(element);
-        } catch (Exception e) {
-            throw new Exception("Unable to find the frame" + e.getMessage());
-        }
-    }
-
-
-    public void waitUntilTheElementIsPresent(String xpath) {
-        WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
-    }
-
-    public void waitUntilTheElementIsVisible1(String type, String Value) throws Exception {
-        if (type.equalsIgnoreCase("id")) {
-            WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(Value)));
-        } else if (type.equalsIgnoreCase("xpath")) {
-            WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Value)));
-        } else {
-            throw new Exception("Unable to find element type");
-        }
-
-
-    }
-
-    public void waitUntilTheElementIsVisible(WebElement element) throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 120, 1000);
-        try {
-            wait.until(ExpectedConditions.visibilityOf(element));
-        } catch (Exception e) {
-            if (e.getMessage().contains("Cannot find context with specified id")) {
-                Thread.sleep(3000);
-                wait.until(ExpectedConditions.visibilityOf(element));
-            }
-        }
-    }
-
-    public void waitUntilAsyncWebElementIsVisible(String xpath) {
-        org.openqa.selenium.support.ui.Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(60, TimeUnit.SECONDS)
-                .pollingEvery(5, TimeUnit.SECONDS).ignoring(WebDriverException.class);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
-    }
-
-    public void waitForPageLoaded() {
-        ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
-                .equals("complete");
-        try {
-            Thread.sleep(1000);
-            WebDriverWait wait = new WebDriverWait(driver, 30);
-            wait.until(expectation);
-        } catch (Throwable error) {
-            // throw new Exception("Timeout waiting for Page Load Request to complete.");
-        }
-    }
-
-    public void setCurrentFrame(WebElement currentFrame) {
-        CurrentFrame = currentFrame;
-    }
-
-    public boolean isElementDisplayed(By locator){
+    public boolean isElementDisplayed(By locator) {
         try {
             Find(locator).isDisplayed();
             return true;
@@ -219,10 +181,11 @@ public class BasePage {
 
 //    Browsers
 
-    public String getCurrentUrlFromAddressBar(By locator){
+    public String getCurrentUrlFromAddressBar(By locator) {
         return Find(locator).getText();
     }
-    public void navigateToSiteViaAddressBar(By locator, String url){
+
+    public void navigateToSiteViaAddressBar(By locator, String url) {
         ClearAndTypeIntoField(locator, url);
         Find(locator).sendKeys(Keys.ENTER);
     }
