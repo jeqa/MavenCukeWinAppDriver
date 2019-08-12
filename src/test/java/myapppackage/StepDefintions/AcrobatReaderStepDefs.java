@@ -2,10 +2,10 @@ package myapppackage.StepDefintions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import myapppackage.WebDriverController;
 import myapppackage.pageObjects.AcrobatReaderApp;
 import org.junit.Assert;
+import java.net.MalformedURLException;
 
 
 public class AcrobatReaderStepDefs {
@@ -21,8 +21,8 @@ public class AcrobatReaderStepDefs {
     }
 
     @Given("that Acrobat Reader has opened")
-    public void that_Acrobat_Reader_has_opened() {
-
+    public void that_Acrobat_Reader_has_opened() throws MalformedURLException {
+        acrobatReaderApp.createAcrobatSession();
     }
 
     @Then("the Sign In dialog is displayed")

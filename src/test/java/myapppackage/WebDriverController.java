@@ -3,7 +3,9 @@ package myapppackage;
 
 import org.junit.Assert;
 import io.appium.java_client.windows.WindowsDriver;
+import org.openqa.selenium.SessionNotCreatedException;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 import java.net.URL;
 
@@ -27,7 +29,14 @@ public class WebDriverController {
             if (appArgument.length() > 0){
                 capabilities.setCapability("appArguments", appArgument);}
 
-            this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+            try {
+                this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+            } catch (SessionNotCreatedException e) {
+                System.out.println(e.getMessage());
+                capabilities.setCapability("app", "Root");
+                this.driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+            }
+
             Assert.assertNotNull(driver);
     
             if (toBeMaximised){
