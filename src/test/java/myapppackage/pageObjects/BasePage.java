@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import java.time.Duration;
+import java.util.Set;
 
 
 public class BasePage {
@@ -29,7 +30,7 @@ public class BasePage {
 
 
     public WebElement Find(By locator) {
-//        driver.getWindowHandles().contains("");
+        switchWindows();
 
         return driver.findElement(locator);
     }
@@ -39,13 +40,14 @@ public class BasePage {
         return driver.findElement(locator);
     }
 
-    private void switchWindows() {
+    public void switchWindows() {
         try {
             Thread.sleep(10000);
 
             for (String winHandle : driver.getWindowHandles()) {
 
                 driver.switchTo().window(winHandle);
+                break;
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -67,7 +69,8 @@ public class BasePage {
     }
 
 
-    public void ClickTest(By element) {
+    public void ClickWithWait(By element) {
+        switchWindows();
         FluentWait(element);
 
     }
@@ -75,13 +78,12 @@ public class BasePage {
     public void FluentWait(By element) {
         try {
 
+
             Wait wait = new FluentWait(driver)
                     .withTimeout(Duration.ofSeconds(7000))
                     .pollingEvery(Duration.ofSeconds(5000))
                     .ignoring(StaleElementReferenceException.class)
                     .ignoring(NoSuchElementException.class);
-
-            driver.findElement(element).click();
 
             wait.until(ExpectedConditions.elementToBeClickable(Find(element)));
 
@@ -94,11 +96,9 @@ public class BasePage {
     }
 
 
-
-
-        public void ClickWithSplashScreen (By locator){
-            SplashScreenFind(locator).click();
-        }
+    public void ClickWithSplashScreen(By locator) {
+        SplashScreenFind(locator).click();
+    }
 
     protected void ClearAndTypeIntoField(By locator, String inputText) {
         Find(locator).clear();
@@ -171,8 +171,7 @@ public class BasePage {
     }
 
 
-
-    public boolean isElementDisplayed(By locator){
+    public boolean isElementDisplayed(By locator) {
         try {
             Find(locator).isDisplayed();
             return true;
@@ -183,10 +182,11 @@ public class BasePage {
 
 //    Browsers
 
-    public String getCurrentUrlFromAddressBar(By locator){
+    public String getCurrentUrlFromAddressBar(By locator) {
         return Find(locator).getText();
     }
-    public void navigateToSiteViaAddressBar(By locator, String url){
+
+    public void navigateToSiteViaAddressBar(By locator, String url) {
         ClearAndTypeIntoField(locator, url);
         Find(locator).sendKeys(Keys.ENTER);
     }

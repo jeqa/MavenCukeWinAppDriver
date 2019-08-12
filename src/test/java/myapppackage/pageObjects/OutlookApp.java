@@ -1,8 +1,6 @@
 package myapppackage.pageObjects;
 
-import gherkin.lexer.Th;
 import io.appium.java_client.windows.WindowsDriver;
-import io.appium.java_client.windows.WindowsElement;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -42,7 +40,7 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickNewAppointmentButton() throws InterruptedException {
-        ClickTest(newAppointmentButton);
+        ClickWithWait(newAppointmentButton);
 
 
     }
@@ -51,12 +49,8 @@ public class OutlookApp extends BasePage {
 
         newSession();
 
-//        driver.findElement(By.name("Invite Attendees")).click();
-        ClickTest(inviteAttendees);
-//        WebElement inviteAttendees = driver.findElementByName("Invite Attendees");
-//        Actions performAct2 = new Actions(driver);
-//        performAct2.click(inviteAttendees).build().perform();
-
+        switchWindows();
+        ClickWithWait(inviteAttendees);
 
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement subjectInput = driver.findElementByAccessibilityId("4100");
@@ -69,8 +63,8 @@ public class OutlookApp extends BasePage {
         performAct.sendKeys(locationInput, locationText).build().perform();
         performAct.sendKeys(calendarBodyInput, bodyText).build().perform();
 
-        ClickTest(sendButton);
-        ClickTest(sendAnywayButton);
+        ClickWithWait(sendButton);
+        ClickWithWait(sendAnywayButton);
 
 
     }
@@ -80,7 +74,6 @@ public class OutlookApp extends BasePage {
 
         newSession();
 
-//        Thread.sleep(2000);
         FluentWait(toInput);
 
         WebElement emailAddressInput = driver.findElementByName("To");
