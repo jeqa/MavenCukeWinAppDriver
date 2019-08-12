@@ -11,7 +11,6 @@ import java.net.MalformedURLException;
 
 public class TeamsStepDefs {
 
-    //private WebDriver driver;
     private WebDriverController webDriverController;
     private TeamsApp teamsApp;
 
@@ -22,13 +21,16 @@ public class TeamsStepDefs {
     }
 
     @Given("that Teams has opened")
-    public void that_Teams_has_opened() throws MalformedURLException {
-        teamsApp.createTeamsLoadingSession();
+    public void that_Teams_has_opened() throws MalformedURLException, InterruptedException {
+        Thread.sleep(5000);
+        teamsApp.createTeamsSession();
+        //teamsApp.createTeamsLoadingSession();
     }
 
     @Then("the Teams Sign In dialog is displayed")
     public void the_Sign_In_dialog_is_displayed() {
         Assert.assertTrue(teamsApp.isTeamSignInMainWindowDisplayed());
+        teamsApp.closeAppWindow();
     }
 
 

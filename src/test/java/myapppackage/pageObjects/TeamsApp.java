@@ -25,20 +25,23 @@ public class TeamsApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-    public void createTeamsLoadingSession() throws MalformedURLException {
-        int intTopLevelWindowHandle = Integer.parseInt(Find(loadingTeamsWindow).getAttribute("NativeWindowHandle"));
+    public void createTeamsSession() throws MalformedURLException {
+        int intTopLevelWindowHandle = Integer.parseInt(Find(mainSignInWindow).getAttribute("NativeWindowHandle"));
         String hexTopLevelWindowHandle = Integer.toHexString(intTopLevelWindowHandle);
         hexTopLevelWindowHandle = "0x" + hexTopLevelWindowHandle.toUpperCase();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("appTopLevelWindow", hexTopLevelWindowHandle);
-        loadingWindowSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
-        Assert.assertNotNull(loadingWindowSession);
+        driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+        webDriverController.setDriver(driver);
+        Assert.assertNotNull(driver);
     }
 
     public boolean isTeamSignInMainWindowDisplayed(){
-        boolean thereOrNot = Find(mainSignInWindow).isDisplayed();
-        loadingWindowSession.closeApp();
-        return thereOrNot;
+        return Find(mainSignInWindow).isDisplayed();
+    }
+
+    public void closeAppWindow(){
+        driver.closeApp();
     }
 
 
