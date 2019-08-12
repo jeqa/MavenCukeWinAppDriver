@@ -24,7 +24,6 @@ public class TeamsStepDefs {
     public void that_Teams_has_opened() throws MalformedURLException, InterruptedException {
         Thread.sleep(5000);
         teamsApp.createTeamsSession();
-        //teamsApp.createTeamsLoadingSession();
     }
 
     @Then("the Teams Sign In dialog is displayed")
@@ -32,6 +31,5 @@ public class TeamsStepDefs {
         Assert.assertTrue(teamsApp.isTeamSignInMainWindowDisplayed());
         teamsApp.closeAppWindow();
     }
-
 
 }
