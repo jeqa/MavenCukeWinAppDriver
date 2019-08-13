@@ -45,7 +45,7 @@ public class OutlookStepDef {
     public void theUserCanSendTheEMailTheRecipient() throws InterruptedException {
         outlookApp.pressSend();
         Thread.sleep(2000);
-        Assert.assertTrue("Expected Email not displayed!", outlookApp.asserNewEmail().equalsIgnoreCase("Demo text"));
+        Assert.assertTrue("Expected Email not displayed!", outlookApp.assertNewEmail().equalsIgnoreCase("Demo text"));
         outlookApp.deleteEmail();
 
 
