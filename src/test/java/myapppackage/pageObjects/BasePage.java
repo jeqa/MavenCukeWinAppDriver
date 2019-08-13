@@ -162,9 +162,6 @@ public class BasePage {
     public WindowsDriver getSessionFromRoot(By locatorInTopLevelWindow) throws MalformedURLException {
         WindowsDriver rootSession;
         if (!driver.getCapabilities().getCapability("app").toString().equals("Root")){
-//            DesiredCapabilities capabilities = new DesiredCapabilities();
-//            capabilities.setCapability("app", "Root");
-//            rootSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
             rootSession =  createRootSession();
         } else {
             rootSession = driver;

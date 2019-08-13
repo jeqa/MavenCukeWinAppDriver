@@ -47,7 +47,6 @@ public class OutlookApp extends BasePage {
 
     public void composeCalendarEntry(String bodyText, String subjectText, String locationText, String toText) throws InterruptedException, MalformedURLException {
 
-        //newSession();
         driver = createRootSession();
 
         switchWindows();
@@ -73,7 +72,7 @@ public class OutlookApp extends BasePage {
 
     public void composeEmail(String mailText, String subjectText, String toText) throws InterruptedException, MalformedURLException {
 
-        newSession();
+        driver = createRootSession();
 
         FluentWait(toInput);
 
