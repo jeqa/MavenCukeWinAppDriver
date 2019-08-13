@@ -29,8 +29,6 @@ public class BasePage {
 
 
     public WebElement Find(By locator) {
-        //switchWindows();
-
         return driver.findElement(locator);
     }
 
@@ -76,8 +74,6 @@ public class BasePage {
 
     public void FluentWait(By element) {
         try {
-
-
             Wait wait = new FluentWait(driver)
                     .withTimeout(Duration.ofSeconds(7000))
                     .pollingEvery(Duration.ofSeconds(5000))
