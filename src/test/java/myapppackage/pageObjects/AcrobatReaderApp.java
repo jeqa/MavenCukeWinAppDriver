@@ -29,25 +29,13 @@ public class AcrobatReaderApp extends BasePage {
     }
 
     public void createAcrobatSession() throws MalformedURLException {
-//        int intTopLevelWindowHandle = Integer.parseInt(Find(mainWindow).getAttribute("NativeWindowHandle"));
-//        String hexTopLevelWindowHandle = Integer.toHexString(intTopLevelWindowHandle);
-//        hexTopLevelWindowHandle = "0x" + hexTopLevelWindowHandle.toUpperCase();
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("appTopLevelWindow", hexTopLevelWindowHandle);
-//        driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
-//        Assert.assertNotNull(driver);
         driver = getSessionFromRoot(mainWindow);
         webDriverController.setDriver(driver);
         Assert.assertNotNull(driver);
     }
 
     public Boolean isSignInRequiredTextDisplayed(){
-        boolean thereOrNot = Find(signInRequiredText).isDisplayed();
-//        driver.closeApp();
-//        if (Find(quitDialog).isDisplayed()) {
-//            Click(quitDialogYesButton);
-//        }
-        return thereOrNot;
+        return Find(signInRequiredText).isDisplayed();
         }
 
     public void closeAppWindow(){
