@@ -5,8 +5,6 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import myapppackage.WebDriverController;
 import myapppackage.pageObjects.ChromeApp;
-import myapppackage.pageObjects.PowerpointApp;
-import myapppackage.pageObjects.SaveAsDialog;
 import org.junit.Assert;
 
 import java.text.SimpleDateFormat;
