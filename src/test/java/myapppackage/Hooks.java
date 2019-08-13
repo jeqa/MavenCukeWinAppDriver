@@ -39,7 +39,7 @@ public class Hooks {
             maximizeFlag = true;
         } else if (scenario.getName().contains("Outlook")){
             appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE";
-            maximizeFlag = true;
+            maximizeFlag = false;
         }
         else if (scenario.getName().contains("Powerpoint")){
 //            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
