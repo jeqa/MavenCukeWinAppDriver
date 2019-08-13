@@ -47,7 +47,8 @@ public class OutlookApp extends BasePage {
 
     public void composeCalendarEntry(String bodyText, String subjectText, String locationText, String toText) throws InterruptedException, MalformedURLException {
 
-        newSession();
+        //newSession();
+        driver = createRootSession();
 
         switchWindows();
         ClickWithWait(inviteAttendees);

@@ -29,7 +29,7 @@ public class BasePage {
 
 
     public WebElement Find(By locator) {
-        switchWindows();
+        //switchWindows();
 
         return driver.findElement(locator);
     }
@@ -162,9 +162,10 @@ public class BasePage {
     public WindowsDriver getSessionFromRoot(By locatorInTopLevelWindow) throws MalformedURLException {
         WindowsDriver rootSession;
         if (!driver.getCapabilities().getCapability("app").toString().equals("Root")){
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("app", "Root");
-            rootSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+//            DesiredCapabilities capabilities = new DesiredCapabilities();
+//            capabilities.setCapability("app", "Root");
+//            rootSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+            rootSession =  createRootSession();
         } else {
             rootSession = driver;
         }
@@ -174,7 +175,12 @@ public class BasePage {
         hexTopLevelWindowHandle = "0x" + hexTopLevelWindowHandle.toUpperCase();
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("appTopLevelWindow", hexTopLevelWindowHandle);
-        WindowsDriver newSession = new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+        return new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+    }
+
+    public WindowsDriver createRootSession() throws MalformedURLException {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("app", "Root");
         return new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
     }
 
