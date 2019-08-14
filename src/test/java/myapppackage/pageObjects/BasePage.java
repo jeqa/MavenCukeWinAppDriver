@@ -53,11 +53,9 @@ public class BasePage {
 
 
     public void windowSwitcherEmail() throws MalformedURLException {
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("app", "Root");
         driver = new WindowsDriver<>(new URL("http://127.0.0.1:4723"), capabilities);
-
     }
 
 
@@ -86,7 +84,8 @@ public class BasePage {
                 Find(element).click();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
@@ -179,8 +178,6 @@ public class BasePage {
     }
 
     public void launchApp() {
-
-        switchWindows();
         driver.launchApp();
     }
 
