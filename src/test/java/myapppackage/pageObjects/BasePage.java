@@ -33,7 +33,7 @@ public class BasePage {
     }
 
     public WebElement SplashScreenFind(By locator) {
-        switchWindows();
+        //switchWindows();
         return driver.findElement(locator);
     }
 
@@ -74,7 +74,7 @@ public class BasePage {
         try {
             Wait wait = new FluentWait(driver)
                     .withTimeout(Duration.ofSeconds(7000))
-                    .pollingEvery(Duration.ofSeconds(5000))
+                    .pollingEvery(Duration.ofSeconds(1000))
                     .ignoring(StaleElementReferenceException.class)
                     .ignoring(NoSuchElementException.class);
 
@@ -173,6 +173,10 @@ public class BasePage {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("app", "Root");
         return new WindowsDriver(new URL("http://127.0.0.1:4723"), capabilities);
+    }
+
+    public void setBasePageDriver(WindowsDriver newDriver){
+        driver = newDriver;
     }
 
     public void closeApp() {

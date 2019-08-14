@@ -2,6 +2,7 @@ package myapppackage.pageObjects;
 
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ public class OutlookApp extends BasePage {
     private static final By sendAnywayButton = By.name("Send Anyway");
     private static final By inviteAttendees = By.name("Invite Attendees");
     private static final By toInput = By.name("To");
+    private static final By mainWindow = By.className("rctrl_renwnd32");
 
 
     private WindowsDriver driver;
@@ -35,18 +37,14 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickNewEmail() throws InterruptedException {
-        Thread.sleep(5000);
-        ClickWithSplashScreen(newEmailButton);
+        Click(newEmailButton);
     }
 
     public void clickNewAppointmentButton() throws InterruptedException {
         ClickWithWait(newAppointmentButton);
-
-
     }
 
     public void composeCalendarEntry(String bodyText, String subjectText, String locationText, String toText) throws InterruptedException, MalformedURLException {
-
         driver = createRootSession();
 
         switchWindows();
@@ -65,13 +63,10 @@ public class OutlookApp extends BasePage {
 
         ClickWithWait(sendButton);
         ClickWithWait(sendAnywayButton);
-
-
     }
 
 
     public void composeEmail(String mailText, String subjectText, String toText) throws InterruptedException, MalformedURLException {
-
         driver = createRootSession();
 
         FluentWait(toInput);
@@ -84,7 +79,6 @@ public class OutlookApp extends BasePage {
         performAct.sendKeys(mailContent, mailText).build().perform();
         performAct.sendKeys(emailAddressInput, toText).build().perform();
         performAct.sendKeys(subjectInput, subjectText).build().perform();
-
     }
 
     private void newSession() throws MalformedURLException {
@@ -111,8 +105,14 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickCalendar() throws InterruptedException {
-        Thread.sleep(5000);
-        ClickWithSplashScreen(calendarButton);
+        Click(calendarButton);
+    }
+
+    public void createOutlookMainSession() throws MalformedURLException {
+        driver = getSessionFromRoot(mainWindow);
+        webDriverController.setDriver(driver);
+        setBasePageDriver(driver);
+        Assert.assertNotNull(driver);
     }
 
 

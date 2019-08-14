@@ -25,13 +25,12 @@ public class OutlookStepDef {
 
 
     @Given("I have opened Outlook")
-    public void iHaveOpenedOutlook() {
-
+    public void iHaveOpenedOutlook() throws MalformedURLException {
+        outlookApp.createOutlookMainSession();
     }
 
     @When("I click the New Email button")
     public void iClickTheNewEmailButton() throws InterruptedException, MalformedURLException {
-        Thread.sleep(8000);
         outlookApp.clickNewEmail();
     }
 
@@ -47,8 +46,6 @@ public class OutlookStepDef {
         Thread.sleep(2000);
         Assert.assertTrue("Expected Email not displayed!", outlookApp.assertNewEmail().equalsIgnoreCase("Demo text"));
         outlookApp.deleteEmail();
-
-
     }
 
     @When("I click the Calendar button")

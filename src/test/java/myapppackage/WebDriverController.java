@@ -50,6 +50,7 @@ public class WebDriverController {
 
     public void teardownController(){
         if (driver != null){
+            driver.closeApp();
             driver.quit();
         }
     }
