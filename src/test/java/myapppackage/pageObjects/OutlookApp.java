@@ -41,14 +41,24 @@ public class OutlookApp extends BasePage {
     }
 
     public void clickNewAppointmentButton() throws InterruptedException {
-        ClickWithWait(newAppointmentButton);
+        switchWindows();
+        waitForElementToBeClickable(newAppointmentButton, 5);
+        goToWeeksInAdvance(10);
+        Click(newAppointmentButton);
+    }
+
+    public void goToWeeksInAdvance(int numOfWeeks){
+
+        for (int i = 0; i <= numOfWeeks; i++) {
+            driver.getKeyboard().pressKey(Keys.DOWN);
+        }
     }
 
     public void composeCalendarEntry(String bodyText, String subjectText, String locationText, String toText) throws InterruptedException, MalformedURLException {
         driver = createRootSession();
 
         switchWindows();
-        ClickWithWait(inviteAttendees);
+        waitForAndThenClickElement(inviteAttendees, 5);
 
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement subjectInput = driver.findElementByAccessibilityId("4100");
@@ -61,15 +71,14 @@ public class OutlookApp extends BasePage {
         performAct.sendKeys(locationInput, locationText).build().perform();
         performAct.sendKeys(calendarBodyInput, bodyText).build().perform();
 
-        ClickWithWait(sendButton);
-        ClickWithWait(sendAnywayButton);
+        waitForAndThenClickElement(sendButton, 5);
     }
 
 
     public void composeEmail(String mailText, String subjectText, String toText) throws InterruptedException, MalformedURLException {
         driver = createRootSession();
 
-        FluentWait(toInput);
+        waitForElementToBeClickable(toInput, 5);
 
         WebElement emailAddressInput = driver.findElementByName("To");
         WebElement mailContent = driver.findElementByName("Page 1 content");
@@ -89,9 +98,7 @@ public class OutlookApp extends BasePage {
 
 
     public void pressSend() {
-
         driver.getKeyboard().sendKeys(Keys.chord(Keys.ALT, "s"));
-
     }
 
     public String assertNewEmail() throws InterruptedException {
@@ -110,6 +117,7 @@ public class OutlookApp extends BasePage {
 
     public void createOutlookMainSession() throws MalformedURLException {
         driver = getSessionFromRoot(mainWindow);
+        driver.manage().window().maximize();
         webDriverController.setDriver(driver);
         setBasePageDriver(driver);
         Assert.assertNotNull(driver);

@@ -58,13 +58,6 @@ public class ExcelStepDefs {
         save_the_workbook();
     }
 
-    @When("I update by entering text into cell DNine")
-    public void i_update_by_entering_text_into_cell_DNine() throws InterruptedException {
-        excelApp.reopenExcel();
-        excelApp.openExistingWorkbook(fileName + ".xlsx");
-        excelApp.enterTextInCell("D9", excelApp.getUpdateText());
-    }
-
     @When("I update by entering text into another cell")
     public void i_update_by_entering_text_into_another_cell(List<String> list) throws InterruptedException {
         String cell = list.get(0);
