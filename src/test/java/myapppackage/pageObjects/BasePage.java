@@ -11,7 +11,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import java.time.Duration;
-import java.util.Set;
 
 
 public class BasePage {
@@ -66,8 +65,7 @@ public class BasePage {
 
     public void ClickWithWait(By element) {
         switchWindows();
-        FluentWait(element);
-
+        waitForAndThenClickElement(element, 5);
     }
 
     public void FluentWait(By element) {
@@ -88,6 +86,20 @@ public class BasePage {
         }
     }
 
+    public void waitForElementToBeClickable(By locator, int duration){
+        try {
+            FluentWait<WindowsDriver> wait = new FluentWait<>(driver)
+                    .withTimeout(Duration.ofSeconds(duration))
+                    .pollingEvery(Duration.ofSeconds(2));
+            wait.until(ExpectedConditions.elementToBeClickable(Find(locator)));
+        } catch (Exception ignored) {
+        }
+    }
+
+    public void waitForAndThenClickElement(By locator, int waitDuration){
+        waitForElementToBeClickable(locator, waitDuration);
+        Click(locator);
+    }
 
     public void ClickWithSplashScreen(By locator) {
         SplashScreenFind(locator).click();
@@ -144,8 +156,7 @@ public class BasePage {
     }
 
     public void enterTextViaSendKeys(By locator, String inputText) throws InterruptedException {
-        Thread.sleep(5000);
-        Click(locator);
+        waitForAndThenClickElement(locator, 5);
         Find(locator).sendKeys(inputText);
     }
 
