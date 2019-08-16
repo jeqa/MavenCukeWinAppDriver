@@ -1,4 +1,4 @@
-@ignore
+@outlook
 Feature: OutlookTest
 
   Scenario: Open Outlook and send mail
@@ -7,7 +7,7 @@ Feature: OutlookTest
     And The user composes the E-mail
     Then the User can send the e-mail to the recipient and confirm the email has been received
 
-
+  @ignore
   Scenario: Open Outlook and create Calendar entry
     Given I have opened Outlook
     When I click the Calendar button
