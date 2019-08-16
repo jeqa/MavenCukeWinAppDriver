@@ -29,6 +29,12 @@ public class SaveAsDialog extends BasePage {
         clearAndTypeFileNameTheSave(filename);
     }
 
+    public void saveFileWithCtrlPlusSWithoutBrowse(String filename){
+        driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "s"));
+        Click(saveAsDocumentsLink);
+        clearAndTypeFileNameTheSave(filename);
+    }
+
     public void saveFileWithCtrlPlusS(){
         driver.getKeyboard().sendKeys(Keys.chord(Keys.CONTROL, "s"));
     }

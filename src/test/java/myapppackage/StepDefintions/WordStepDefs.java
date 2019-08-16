@@ -19,7 +19,7 @@ public class WordStepDefs {
     WordApp wordApp;
     SaveAsDialog saveAsDialog;
 
-    public String fileName;
+    private String fileName;
 
     public WordStepDefs(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
@@ -33,7 +33,7 @@ public class WordStepDefs {
     }
 
     @When("I enter text")
-    public void i_enter_text() {
+    public void i_enter_text() throws InterruptedException {
         wordApp.enterTextInWordDocument();
     }
 
@@ -49,18 +49,21 @@ public class WordStepDefs {
     public void the_entered_text_is_retained() {
         wordApp.reopenWord();
         wordApp.openExistingDocument(fileName + ".docx");
-        Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(wordApp.getInitialText()));
+        String expectedText = wordApp.getInitialText();
+        String actualText = wordApp.getDocumentText();
+        Assert.assertTrue("Expected text to be '" + expectedText + "'; however, actual text is '" + actualText +"'!",
+                expectedText.equalsIgnoreCase(actualText));
     }
 
     @Given("I have created and saved a Word Document")
-    public void i_have_created_and_saved_a_Word_Document() {
+    public void i_have_created_and_saved_a_Word_Document() throws InterruptedException {
         i_have_opened_Word();
         i_enter_text();
         save_the_document();
     }
 
     @When("I update the text")
-    public void i_update_the_text() {
+    public void i_update_the_text() throws InterruptedException {
         wordApp.reopenWord();
         wordApp.openExistingDocument(fileName + ".docx");
         wordApp.updateTextInWordDocument();
@@ -77,8 +80,12 @@ public class WordStepDefs {
         wordApp.reopenWord();
         wordApp.openExistingDocument(fileName + ".docx");
         String allText = wordApp.getInitialText() + " " + wordApp.getUpdateText();
-        Assert.assertTrue(wordApp.getDocumentText().equalsIgnoreCase(allText));
+        String actualText = wordApp.getDocumentText();
+        Assert.assertTrue("Expected text to be '" + allText + "'; however, actual text is '" + actualText +"'!",
+                actualText.equalsIgnoreCase(allText));
     }
+
+
 
 
 

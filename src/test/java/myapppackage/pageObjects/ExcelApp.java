@@ -3,24 +3,29 @@ package myapppackage.pageObjects;
 import io.appium.java_client.windows.WindowsDriver;
 import myapppackage.WebDriverController;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 public class ExcelApp extends BasePage {
 
     private WindowsDriver driver;
     WebDriverController webDriverController;
 
-    private String b4InitialText = "Initial Text in B4";
-    private String d9UpdateText = "Update Text in D9";
+    private String cellContainingText = "";
+    private String initialText = "Initial Text in ";
+    private String updateText = "Update Text in ";
+
+    public void setCellContainingText(String cellContainingText) {
+        this.cellContainingText = cellContainingText;
+    }
+
+    public String getCellContainingText() {
+        return cellContainingText;
+    }
 
 //  Locators
     private static final By fileMenuTab = By.name("File Tab");
     private static final By newMenuOption = By.name("New");
     private static final By openMenuOption = By.name("Open");
     private static final By blankDocumentLink = By.name("Blank workbook");
-    private static final By cellB4 = By.name("B4");
-    private static final By cellD9 = By.name("D9");
-
 
 
     public ExcelApp(WebDriverController webDriverController){
@@ -29,15 +34,17 @@ public class ExcelApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-    public void selectBlankDocument(){
+    public void selectBlankDocument() throws InterruptedException {
+        Thread.sleep(2000);
         Click(fileMenuTab);
         Click(newMenuOption);
         Click(blankDocumentLink);
     }
 
-    public void enterTextInCell(String cell, String text){
+    public void enterTextInCell(String cell, String text) throws InterruptedException {
+        setCellContainingText(cell);
         Click(By.name(cell));
-        enterTextViaSendKeys(By.name(cell), text);
+        enterTextViaSendKeys(By.name(cell), text + cell);
     }
 
     public void closeExcel(){
@@ -58,31 +65,15 @@ public class ExcelApp extends BasePage {
         return Find(By.name(cell)).getText();
     }
 
-    public String getB4InitialText(){
-        return b4InitialText;
+    public String getInitialText(){
+        return initialText;
     }
 
-    public String getD9UpdateText(){
-        return d9UpdateText;
+    public String getUpdateText(){
+        return updateText;
     }
 
-//    public String getDocumentText(){
-//        return Find(document).getText().replace("\r", "");
-//    }
-//
-//    public String getInitialText(){
-//        return initialText;
-//    }
-//
-//    public String getUpdateText(){
-//        return updateText;
-//    }
-//
-//    public void updateTextInWordDocument(){
-//        Click(document);
-//        Find(document).sendKeys(Keys.SPACE);
-//        enterTextViaSendKeys(document, updateText);
-//    }
+
 
 
     }
