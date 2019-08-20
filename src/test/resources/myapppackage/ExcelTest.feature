@@ -1,4 +1,4 @@
-@Excel
+@ignore
 Feature: ExcelTest
 
   Scenario: Create and Save Excel Document
