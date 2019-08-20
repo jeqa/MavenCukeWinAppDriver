@@ -1,4 +1,4 @@
-@Word
+@ignore
 Feature: WordTest
 
   Scenario: Create and Save Word Document
