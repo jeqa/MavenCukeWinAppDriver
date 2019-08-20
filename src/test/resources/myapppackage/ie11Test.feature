@@ -1,4 +1,4 @@
-@ie
+@ignore
 Feature: IETest
 
   Scenario: IE11 home page
