@@ -57,8 +57,10 @@ public class Hooks {
             maximizeFlag = true;
         }
         else if (scenario.getName().contains("Edge")){
-            appId = "Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge";
-            maximizeFlag = true;
+            AppConfig app = AppConfig.edge;
+            appId = app.getAppId();
+            appArg = app.getAppArg();
+            maximizeFlag = app.isMaximizeFlag();
         }
         else if (scenario.getName().contains("Acrobat")){
 //            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
@@ -70,8 +72,10 @@ public class Hooks {
             maximizeFlag = true;
         }
         else if (scenario.getName().contains("Calculator")){
-            appId = "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App";
-            maximizeFlag = true;
+            AppConfig app = AppConfig.calculator;
+            appId = app.getAppId();
+            appArg = app.getAppArg();
+            maximizeFlag = app.isMaximizeFlag();
         }
         else if (scenario.getName().contains("Firefox")){
             appId = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
@@ -81,6 +85,8 @@ public class Hooks {
             appId = "C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Corporation\\Microsoft Teams";
             maximizeFlag = false;
         }
+
+
 
         webDriverController.setupController(appId, appArg, maximizeFlag);
     }
