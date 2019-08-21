@@ -1,4 +1,4 @@
-@outlook
+@ignore
 Feature: OutlookTest
 
   Scenario: Open Outlook and send mail
