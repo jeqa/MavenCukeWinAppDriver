@@ -1,4 +1,4 @@
-@notepad
+@ignore
 
 Feature: NotepadTest
 

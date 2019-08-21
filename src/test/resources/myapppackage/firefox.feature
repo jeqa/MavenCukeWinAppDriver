@@ -1,4 +1,4 @@
-@firefox
+@ignore
 Feature: FirefoxTest
 
   Scenario: Firefox home page
