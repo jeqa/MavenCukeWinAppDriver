@@ -12,6 +12,7 @@ public class Hooks {
     public String browserVersion;
     public String platform;
     private String value;
+    AppConfig app;
 
     public Hooks(WebDriverController webDriverController){
         this.webDriverController = webDriverController;
@@ -28,65 +29,45 @@ public class Hooks {
         boolean maximizeFlag = false;
 
         if (scenario.getName().contains("Word")){
-//            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\WINWORD.exe";
-            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.exe";
-            appArg = "/q";
-            maximizeFlag = true;
-        } else if (scenario.getName().contains("Excel")){
-//            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\EXCEL.exe";
-            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.exe";
-            appArg = "/e";
-            maximizeFlag = true;
-        } else if (scenario.getName().contains("Outlook")){
-            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE";
-            maximizeFlag = false;
+            app = AppConfig.word;
+        }
+        else if (scenario.getName().contains("Excel")){
+            app = AppConfig.excel;
+        }
+        else if (scenario.getName().contains("Outlook")){
+            app = AppConfig.outlook;
         }
         else if (scenario.getName().contains("Powerpoint")){
-//            appId = "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
-            appId = "C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.exe";
-            appArg = "/s";
-            maximizeFlag = true;
+            app = AppConfig.powerpoint;
         }
         else if (scenario.getName().contains("Chrome")){
-            appId = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
-            appArg = "--start-maximized";
-            maximizeFlag = false;
+            app = AppConfig.chrome;
         }
         else if (scenario.getName().contains("IE11")){
-            appId = "C:\\Program Files\\internet explorer\\iexplore.exe";
-            maximizeFlag = true;
+            app = AppConfig.ie11;
         }
         else if (scenario.getName().contains("Edge")){
-            AppConfig app = AppConfig.edge;
-            appId = app.getAppId();
-            appArg = app.getAppArg();
-            maximizeFlag = app.isMaximizeFlag();
+            app = AppConfig.edge;
         }
         else if (scenario.getName().contains("Acrobat")){
-//            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroRd32.exe";
-            appId = "C:\\Program Files (x86)\\Adobe\\Acrobat DC\\Acrobat\\Acrobat.exe";
-            maximizeFlag = false;
+            app = AppConfig.acrobat;
         }
         else if (scenario.getName().contains("Notepad")){
-            appId = "C:\\Windows\\System32\\notepad.exe";
-            maximizeFlag = true;
+            app = AppConfig.notepad;
         }
         else if (scenario.getName().contains("Calculator")){
-            AppConfig app = AppConfig.calculator;
-            appId = app.getAppId();
-            appArg = app.getAppArg();
-            maximizeFlag = app.isMaximizeFlag();
+            app = AppConfig.calculator;
         }
         else if (scenario.getName().contains("Firefox")){
-            appId = "C:\\Program Files\\Mozilla Firefox\\firefox.exe";
-            maximizeFlag = true;
+            app = AppConfig.firefox;
         }
         else if (scenario.getName().contains("Teams")){
-            appId = "C:\\Users\\Administrator\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Microsoft Corporation\\Microsoft Teams";
-            maximizeFlag = false;
+            app = AppConfig.teams;
         }
 
-
+        appId = app.getAppId();
+        appArg = app.getAppArg();
+        maximizeFlag = app.isMaximizeFlag();
 
         webDriverController.setupController(appId, appArg, maximizeFlag);
     }
