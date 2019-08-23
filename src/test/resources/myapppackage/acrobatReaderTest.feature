@@ -1,4 +1,4 @@
-@ignore
+@acrobat
 
 Feature: AcrobatReaderTest
 
