@@ -39,7 +39,8 @@ public class EdgeStepDefs {
 
     @Then("the expected site is displayed in Edge")
     public void the_expected_site_is_displayed_in_Edge() {
+        boolean boolTargetTab = edgeApp.isExpectedTargetTabDisplayed();
         Assert.assertTrue("The expected Tab was not displayed! Actual Tab text is: '" + edgeApp.getTabText() + "'. See attached screenshot for more information.",
-                edgeApp.isExpectedTargetTabDisplayed());
+                boolTargetTab);
     }
 }

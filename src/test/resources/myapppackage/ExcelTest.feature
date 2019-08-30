@@ -1,4 +1,4 @@
-@Excel
+@excel
 Feature: ExcelTest
 
   Scenario: Create and Save Excel Document

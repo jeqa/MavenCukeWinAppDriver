@@ -1,4 +1,4 @@
-@Chrome
+@chrome
 Feature: ChromeTest
 
   Scenario: Chrome home page
