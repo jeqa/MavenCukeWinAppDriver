@@ -29,7 +29,7 @@ public class TeamsStepDefs {
     @Then("the Teams Sign In dialog is displayed")
     public void the_Sign_In_dialog_is_displayed() {
         Assert.assertTrue("Fail! The sign in dialog has not been displayed!", teamsApp.isTeamSignInMainWindowDisplayed());
-        teamsApp.closeAppWindow();
+        teamsApp.closeApp();
     }
 
 }
