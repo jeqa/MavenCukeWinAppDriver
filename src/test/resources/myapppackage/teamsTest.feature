@@ -1,4 +1,4 @@
-@teams
+@ignore
 
 Feature: TeamsTest
 
