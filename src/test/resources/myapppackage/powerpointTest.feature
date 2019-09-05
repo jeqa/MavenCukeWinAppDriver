@@ -1,4 +1,4 @@
-@ignore
+@powerpoint
 Feature: PowerPointTest
 
   Scenario: Create and Save Powerpoint file with added slide

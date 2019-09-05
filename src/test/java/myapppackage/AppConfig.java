@@ -36,7 +36,7 @@ public class AppConfig {
 
     static AppConfig powerpoint = new AppConfig("C:\\Program Files\\Microsoft Office\\root\\Office16\\POWERPNT.exe", "/s", true);
 
-    static AppConfig chrome = new AppConfig("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "", true);
+    static AppConfig chrome = new AppConfig("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "", false);
 
     static AppConfig ie11 = new AppConfig("C:\\Program Files\\internet explorer\\iexplore.exe", "", true);
 
