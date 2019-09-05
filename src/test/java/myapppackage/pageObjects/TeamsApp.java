@@ -21,7 +21,8 @@ public class TeamsApp extends BasePage {
         driver = webDriverController.getDriver();
     }
 
-    public void createTeamsSession() throws MalformedURLException {
+    public void createTeamsSession() throws MalformedURLException, InterruptedException {
+        Thread.sleep(10000);
         driver = getSessionFromRoot(mainSignInWindow);
         webDriverController.setDriver(driver);
         Assert.assertNotNull(driver);
